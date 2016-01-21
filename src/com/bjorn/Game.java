@@ -24,12 +24,12 @@ public class Game {
     public void printWelcome(){
         System.out.print(ANSI_CLS+ANSI_HOME);
         for (int i = 0; i < 20; i++) {
-            printAndWait(ANSI_RED+title+ANSI_RESET);
-            printAndWait(title);
+            printTitleAndWait(ANSI_RED+title+ANSI_RESET);
+            printTitleAndWait(title);
         }
     }
 
-    private void printAndWait(String title) {
+    private void printTitleAndWait(String title) {
         System.out.print(title);
         try {
             TimeUnit.MILLISECONDS.sleep(50);
@@ -39,9 +39,9 @@ public class Game {
         }
     }
     public void printBoard(Board boardState) {
-        printYAxisNumbers();
+        printXAxisNumbers();
         for (int xCoordinate = 0; xCoordinate < 10; xCoordinate++) {
-            printXAxis(xCoordinate);
+            printYAxisNumbers(xCoordinate);
             for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
                 printCellState(boardState, xCoordinate, yCoordinate);
             }
@@ -56,17 +56,17 @@ public class Game {
         System.out.print("_|");
     }
 
-    private void printYAxisNumbers() {
+    private void printXAxisNumbers() {
         System.out.print("  ");
-        String yAxisNumbers = " %-2d ";
+        String xAxisNumbers = " %-2d ";
         for (int i = 0; i< 10; i++){
-            System.out.format(yAxisNumbers, i);
+            System.out.format(xAxisNumbers, i);
         }
         System.out.print("\n");
     }
 
-    private void printXAxis(int xAxisNumber){
-        System.out.print(xAxisNumber);
+    private void printYAxisNumbers(int yAxisNumber){
+        System.out.print(yAxisNumber);
         System.out.print("|");
     }
 }

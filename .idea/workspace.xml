@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46b809db-ca7e-487a-a265-94825a3703ae" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bjorn/Driver.java" afterPath="$PROJECT_DIR$/src/com/bjorn/Driver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bjorn/Game.java" afterPath="$PROJECT_DIR$/src/com/bjorn/Game.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/bjorn/GameTest.java" afterPath="$PROJECT_DIR$/test/com/bjorn/GameTest.java" />
     </list>
@@ -25,7 +24,7 @@
     <favorites_list name="AgileBattleShip" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5212963">
+    <splitter split-orientation="horizontal" split-proportion="0.4462963">
       <split-first>
         <leaf>
           <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
@@ -43,21 +42,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/bjorn/Driver.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.32289627">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Game.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/bjorn/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+                <state vertical-scroll-proportion="0.67514676">
+                  <caret line="23" column="98" selection-start-line="23" selection-start-column="98" selection-end-line="23" selection-end-column="98" />
                   <folding />
                 </state>
               </provider>
@@ -82,8 +81,8 @@
           <file leaf-file-name="GameTest.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/com/bjorn/GameTest.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47162426">
-                  <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+                <state vertical-scroll-proportion="1.6457926">
+                  <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -115,9 +114,9 @@
       <list>
         <option value="$PROJECT_DIR$/test/com/bjorn/BoardTest.java" />
         <option value="$PROJECT_DIR$/src/com/bjorn/Board.java" />
-        <option value="$PROJECT_DIR$/src/com/bjorn/Game.java" />
-        <option value="$PROJECT_DIR$/test/com/bjorn/GameTest.java" />
         <option value="$PROJECT_DIR$/src/com/bjorn/Driver.java" />
+        <option value="$PROJECT_DIR$/test/com/bjorn/GameTest.java" />
+        <option value="$PROJECT_DIR$/src/com/bjorn/Game.java" />
       </list>
     </option>
   </component>
@@ -264,7 +263,7 @@
       <recent name="com.bjorn" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Driver">
+  <component name="RunManager" selected="JUnit.GameTest">
     <configuration default="false" name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -588,8 +587,8 @@
     </list>
     <recent_temporary>
       <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.Driver" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.GameTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.GameTest" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Driver" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.BoardTest" />
       </list>
     </recent_temporary>
@@ -605,12 +604,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameTest - 2016.01.20 at 19h 45m 38s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 19h 46m 46s.xml">
-      <configuration name="GameTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="GameTest - 2016.01.20 at 19h 50m 18s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
@@ -635,6 +628,12 @@
     <history-entry file="GameTest - 2016.01.20 at 20h 05m 02s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="GameTest - 2016.01.21 at 09h 07m 08s.xml">
+      <configuration name="GameTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="GameTest - 2016.01.21 at 09h 07m 37s.xml">
+      <configuration name="GameTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -647,7 +646,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -699,28 +698,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/com/bjorn/GameTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47162426">
-          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+        <state vertical-scroll-proportion="1.6457926">
+          <caret line="87" column="0" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Driver.java">
+    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32289627">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.67514676">
+          <caret line="23" column="98" selection-start-line="23" selection-start-column="98" selection-end-line="23" selection-end-column="98" />
           <folding />
         </state>
       </provider>

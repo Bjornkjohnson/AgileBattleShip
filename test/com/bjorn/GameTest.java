@@ -71,7 +71,7 @@ public class GameTest {
                 "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗███████║██║  ██║██║██║     \n" +
                 "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     \n";
         testWelcome += ANSI_CLS+ANSI_HOME;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 20; i++) {
             testWelcome += ANSI_RED+testTitle+ANSI_RESET;
             testWelcome += ANSI_CLS+ANSI_HOME;
             testWelcome += testTitle;

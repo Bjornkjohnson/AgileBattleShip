@@ -32,5 +32,4 @@ public class BoardTest {
         newBoard.upDateBoardState(1);
         assertEquals("M", newBoard.getCellState(1));
     }
-
 }

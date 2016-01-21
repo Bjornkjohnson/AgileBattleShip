@@ -44,15 +44,20 @@ public class Game {
 
     public void printBoard(Board boardState) {
         printYAxisNumbers();
-        for (int xAxis = 0; xAxis < 10; xAxis++) {
-            printXAxis(xAxis);
-            for (int yAxis = 0; yAxis < 10; yAxis++) {
-                System.out.print("_");
-                System.out.print("~");
-                System.out.print("_|");
+        for (int xCoordinate = 0; xCoordinate < 10; xCoordinate++) {
+            printXAxis(xCoordinate);
+            for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
+                printCellState(boardState, xCoordinate, yCoordinate);
             }
             System.out.print("\n");
         }
+    }
+
+    private void printCellState(Board boardState, int xCoordinate, int yCoordinate) {
+        int cellNumber = xCoordinate*10 + yCoordinate;
+        System.out.print("_");
+        System.out.print(boardState.getCellState(cellNumber));
+        System.out.print("_|");
     }
 
     private void printYAxisNumbers() {

@@ -42,27 +42,30 @@ public class Game {
         }
     }
 
-    public void printBoard(Board newBoard) {
+    public void printBoard(Board boardState) {
+        printYAxisNumbers();
+        for (int xAxis = 0; xAxis < 10; xAxis++) {
+            printXAxis(xAxis);
+            for (int yAxis = 0; yAxis < 10; yAxis++) {
+                System.out.print("_");
+                System.out.print("~");
+                System.out.print("_|");
+            }
+            System.out.print("\n");
+        }
+    }
+
+    private void printYAxisNumbers() {
         System.out.print("  ");
-        String topNumber = " %-2d ";
+        String yAxisNumbers = " %-2d ";
         for (int i = 0; i< 10; i++){
-            System.out.format(topNumber, i);
+            System.out.format(yAxisNumbers, i);
         }
         System.out.print("\n");
-        for (int i = 0; i < 100; i++) {
-            if (i%10 == 0) {
-                System.out.print(i/10);
-                System.out.print("|_");
-            }
-            if (i%10 == 9){
-                System.out.print("~");
-                System.out.print("_|\n");
-            } else  {
-                System.out.print("~");
-                System.out.print("_|_");
-            }
+    }
 
-        }
-
+    private void printXAxis(int xAxisNumber){
+        System.out.print(xAxisNumber);
+        System.out.print("|");
     }
 }

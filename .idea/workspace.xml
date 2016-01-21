@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46b809db-ca7e-487a-a265-94825a3703ae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/bjorn/Driver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AgileBattleShip/com/bjorn/Game.class" afterPath="$PROJECT_DIR$/out/production/AgileBattleShip/com/bjorn/Game.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/test/AgileBattleShip/com/bjorn/GameTest.class" afterPath="$PROJECT_DIR$/out/test/AgileBattleShip/com/bjorn/GameTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bjorn/Game.java" afterPath="$PROJECT_DIR$/src/com/bjorn/Game.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/com/bjorn/GameTest.java" afterPath="$PROJECT_DIR$/test/com/bjorn/GameTest.java" />
     </list>
     <ignored path="AgileBattleShip.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +54,8 @@
           <file leaf-file-name="Game.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/bjorn/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.5870842">
-                  <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.08806262">
+                  <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -119,8 +114,8 @@
         <option value="$PROJECT_DIR$/test/com/bjorn/BoardTest.java" />
         <option value="$PROJECT_DIR$/src/com/bjorn/Board.java" />
         <option value="$PROJECT_DIR$/src/com/bjorn/Driver.java" />
-        <option value="$PROJECT_DIR$/src/com/bjorn/Game.java" />
         <option value="$PROJECT_DIR$/test/com/bjorn/GameTest.java" />
+        <option value="$PROJECT_DIR$/src/com/bjorn/Game.java" />
       </list>
     </option>
   </component>
@@ -608,34 +603,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameTest - 2016.01.20 at 14h 47m 53s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 07m 55s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 48m 18s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 08m 21s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 48m 55s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 08m 47s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 49m 39s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 09m 49s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 51m 24s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 10m 11s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 51m 46s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 10m 47s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 52m 09s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 11m 47s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 52m 56s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 13m 59s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 55m 20s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 14m 04s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GameTest - 2016.01.20 at 14h 55m 46s.xml">
+    <history-entry file="GameTest - 2016.01.20 at 19h 15m 08s.xml">
       <configuration name="GameTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -679,19 +674,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Board.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#128#129#0" expanded="true" />
-            <element signature="e#172#173#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-            <element signature="e#259#260#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bjorn/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -710,14 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5870842">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/com/bjorn/GameTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.81409">
@@ -725,6 +699,27 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/bjorn/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08806262">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

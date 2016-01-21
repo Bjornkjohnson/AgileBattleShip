@@ -13,11 +13,15 @@ import static org.junit.Assert.assertEquals;
 
 public class GameTest {
 
+    private Board newBoard;
+    private Game newGame;
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 
     @Before
     public void setUp() throws UnsupportedEncodingException {
         System.setOut(new PrintStream(outContent));
+        newBoard = new Board();
+        newGame = new Game();
     }
 
     @After
@@ -27,8 +31,7 @@ public class GameTest {
 
     @Test
     public void testPrintEmptyGameBoard() {
-        Board newBoard = new Board();
-        Game newGame = new Game();
+
 
         String printedBoard = "" +
                 "   0   1   2   3   4   5   6   7   8   9  \n" +
@@ -46,6 +49,31 @@ public class GameTest {
         assertEquals(printedBoard, outContent.toString());
     }
 
+    @Test
+    public void testPrintWelcome(){
+        String ANSI_RESET = "\u001B[0m";
+        String ANSI_RED = "\u001B[31m";
+        String ANSI_CLS = "\033[2J";
+        String ANSI_HOME = "\u001b[H";
+        String testWelcome = "";
+        String testTitle = "" +
+                "██████╗  █████╗ ████████╗████████╗██╗     ███████╗███████╗██╗  ██╗██╗██████╗ \n" +
+                "██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝██╔════╝██║  ██║██║██╔══██╗\n" +
+                "██████╔╝███████║   ██║      ██║   ██║     █████╗  ███████╗███████║██║██████╔╝\n" +
+                "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝  ╚════██║██╔══██║██║██╔═══╝ \n" +
+                "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗███████║██║  ██║██║██║     \n" +
+                "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     \n";
+        testWelcome += ANSI_CLS+ANSI_HOME;
+        for (int i = 0; i < 10; i++) {
+            testWelcome += ANSI_RED+testTitle+ANSI_RESET;
+            testWelcome += ANSI_CLS+ANSI_HOME;
+            testWelcome += testTitle;
+            testWelcome += ANSI_CLS+ANSI_HOME;
+
+        }
+        newGame.printWelcome();
+        assertEquals(testWelcome, outContent.toString());
+    }
 
 
 

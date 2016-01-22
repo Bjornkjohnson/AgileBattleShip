@@ -49,6 +49,27 @@ public class UITest {
     }
 
     @Test
+    public void testPrintOneMissGameBoard() {
+
+        Board oneMissBoard = new Board();
+        oneMissBoard.upDateBoardState(0);
+        String printedBoard = "" +
+                "   0   1   2   3   4   5   6   7   8   9  \n" +
+                "0|_M_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "1|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "2|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "3|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "4|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "5|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "6|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "7|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "8|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "9|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n";
+        newUI.printBoard(oneMissBoard);
+        assertEquals(printedBoard, outContent.toString());
+    }
+
+    @Test
     public void testPrintWelcome(){
         String ANSI_RESET = "\u001B[0m";
         String ANSI_RED = "\u001B[31m";

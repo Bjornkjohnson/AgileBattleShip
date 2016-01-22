@@ -6,6 +6,5 @@ public class Driver {
         Board newBoard = new Board();
         Game newGame = new Game(newUI, newBoard);
         newGame.startGame();
-
     }
 }

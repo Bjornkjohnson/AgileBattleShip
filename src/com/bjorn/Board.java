@@ -19,6 +19,9 @@ public class Board {
 
 
     public void upDateBoardState(int coordinates) {
-        boardState.put(1,"M");
+        if (getCellState(coordinates) == "~"){
+            boardState.put(coordinates,"M");
+        }
+
     }
 }

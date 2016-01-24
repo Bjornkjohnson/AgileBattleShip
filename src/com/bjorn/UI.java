@@ -1,5 +1,6 @@
 package com.bjorn;
 
+import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class UI {
@@ -21,6 +22,13 @@ public class UI {
             "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝  ╚════██║██╔══██║██║██╔═══╝ \n" +
             "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗███████║██║  ██║██║██║     \n" +
             "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     \n";
+
+    public static int getUserInput() {
+        Scanner input = new Scanner(System.in);
+        int userInput = input.nextInt();
+        return userInput;
+    }
+
     public void printWelcome(){
         System.out.print(ANSI_CLS+ANSI_HOME);
         for (int i = 0; i < 20; i++) {

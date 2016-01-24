@@ -1,13 +1,10 @@
 package com.bjorn;
 
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -29,7 +26,7 @@ public class UITest {
     }
 
     @Test
-    public void testPrintEmptyGameBoard() {
+    public void testPrintEmptyGameBoard() throws Exception {
 
 
         String printedBoard = "" +
@@ -49,7 +46,7 @@ public class UITest {
     }
 
     @Test
-    public void testPrintOneMissGameBoard() {
+    public void testPrintOneMissGameBoard() throws Exception {
 
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(0);
@@ -70,7 +67,28 @@ public class UITest {
     }
 
     @Test
-    public void testPrintWelcome(){
+    public void testMissInMiddleOfBoard() throws Exception {
+
+        Board oneMissBoard = new Board();
+        oneMissBoard.upDateBoardState(45);
+        String printedBoard = "" +
+                "   0   1   2   3   4   5   6   7   8   9  \n" +
+                "0|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "1|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "2|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "3|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "4|_~_|_~_|_~_|_~_|_~_|_M_|_~_|_~_|_~_|_~_|\n" +
+                "5|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "6|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "7|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "8|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "9|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n";
+        newUI.printBoard(oneMissBoard);
+        assertEquals(printedBoard, outContent.toString());
+    }
+
+    @Test
+    public void testPrintWelcome() throws Exception {
         String ANSI_RESET = "\u001B[0m";
         String ANSI_RED = "\u001B[31m";
         String ANSI_CLS = "\033[2J";
@@ -100,6 +118,13 @@ public class UITest {
         }
         newUI.printWelcome();
         assertEquals(testWelcome, outContent.toString());
+    }
+
+    @Test
+    public void getCoordinatesFromUser() throws Exception {
+        ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+        System.setIn(in);
+        assertEquals(1, UI.getUserInput());
     }
 
 

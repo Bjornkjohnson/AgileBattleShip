@@ -47,9 +47,9 @@ public class UI {
     }
     public void printBoard(Board boardState) {
         printXAxisNumbers();
-        for (int xCoordinate = 0; xCoordinate < 10; xCoordinate++) {
-            printYAxisNumbers(xCoordinate);
-            for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
+        for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
+            printYAxisNumbers(yCoordinate);
+            for (int xCoordinate = 0; xCoordinate < 10; xCoordinate++) {
                 printCellState(boardState, xCoordinate, yCoordinate);
             }
             System.out.print("\n");
@@ -57,7 +57,7 @@ public class UI {
     }
 
     private void printCellState(Board boardState, int xCoordinate, int yCoordinate) {
-        int cellNumber = xCoordinate*10 + yCoordinate;
+        int cellNumber = xCoordinate + yCoordinate*10;
         System.out.print("_");
         System.out.print(boardState.getCellState(cellNumber));
         System.out.print("_|");

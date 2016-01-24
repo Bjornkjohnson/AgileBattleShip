@@ -127,5 +127,18 @@ public class UITest {
         assertEquals(1, UI.getUserInput());
     }
 
+    @Test
+    public void promptUserForXCoordinates() throws Exception {
+        String prompt = "Please Enter X Coordinate: ";
+        newUI.promptForXCoordinate();
+        assertEquals(prompt, outContent.toString());
+    }
+
+    @Test
+    public void promptUserForYCoordinates() throws Exception {
+        String prompt = "Please Enter Y Coordinate: ";
+        newUI.promptForYCoordinate();
+        assertEquals(prompt, outContent.toString());
+    }
 
 }

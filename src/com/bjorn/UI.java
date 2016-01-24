@@ -6,8 +6,7 @@ import java.util.concurrent.TimeUnit;
 public class UI {
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_RED = "\u001B[31m";
-    private static final String ANSI_CLS = "\033[2J";
-    private static final String ANSI_HOME = "\u001b[H";
+    private static final String ANSI_CLS_HOME = "\033[2J\u001B[H";
     private static final String title = "" +
             "██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗ \n" +
             "██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗\n" +
@@ -30,7 +29,7 @@ public class UI {
     }
 
     public void printWelcome(){
-        System.out.print(ANSI_CLS+ANSI_HOME);
+        System.out.print(ANSI_CLS_HOME);
         for (int i = 0; i < 20; i++) {
             printTitleAndWait(ANSI_RED+title+ANSI_RESET);
             printTitleAndWait(title);
@@ -41,7 +40,7 @@ public class UI {
         System.out.print(title);
         try {
             TimeUnit.MILLISECONDS.sleep(50);
-            System.out.print(ANSI_CLS+ANSI_HOME);
+            System.out.print(ANSI_CLS_HOME);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -76,5 +75,13 @@ public class UI {
     private void printYAxisNumbers(int yAxisNumber){
         System.out.print(yAxisNumber);
         System.out.print("|");
+    }
+
+    public void promptForXCoordinate() {
+        System.out.print("Please Enter X Coordinate: ");
+    }
+
+    public void promptForYCoordinate() {
+        System.out.print("Please Enter Y Coordinate: ");
     }
 }

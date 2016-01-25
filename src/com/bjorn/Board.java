@@ -19,14 +19,9 @@ public class Board {
     }
 
 
-    public void upDateBoardState(int xCoordinate, int yCoordinate) {
+    public void upDateBoardState(int xCoordinate, int yCoordinate, String symbol) {
         int cellCoordinate = convertCoordinateToInt(xCoordinate, yCoordinate);
-        if (getCellState(xCoordinate, yCoordinate) == "~"){
-            boardState.put(cellCoordinate,"M");
-        } else {
-            boardState.put(cellCoordinate,"H");
-        }
-
+        boardState.put(cellCoordinate, symbol);
     }
 
     public void placeShip(int xCoordinate, int yCoordinate, String symbol) {

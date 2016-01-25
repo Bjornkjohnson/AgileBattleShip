@@ -52,7 +52,7 @@ public class UITest {
     public void testPrintOneMissGameBoard() throws Exception {
 
         Board oneMissBoard = new Board();
-        oneMissBoard.upDateBoardState(0, 0);
+        oneMissBoard.upDateBoardState(0, 0, "M");
         String printedBoard = ANSI_CLS_HOME +
                 "   0   1   2   3   4   5   6   7   8   9  \n" +
                 "0|_M_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
@@ -73,7 +73,7 @@ public class UITest {
     public void testMissInMiddleOfBoard() throws Exception {
 
         Board oneMissBoard = new Board();
-        oneMissBoard.upDateBoardState(5, 4);
+        oneMissBoard.upDateBoardState(5, 4, "M");
         String printedBoard = ANSI_CLS_HOME +
                 "   0   1   2   3   4   5   6   7   8   9  \n" +
                 "0|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +

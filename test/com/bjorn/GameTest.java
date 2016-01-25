@@ -64,13 +64,16 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0);
+        verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0, "H");
     }
 
     @Test
     public void testComputerShipPlacement() {
         HashMap<Integer, String> testBoardState  = new HashMap<>();
         testBoardState.put(0, "H");
+        testBoardState.put(1, "S");
+        testBoardState.put(2, "S");
+        testBoardState.put(3, "S");
         UI mockUI = Mockito.mock(UI.class);
         Board testBoard = new Board();
         Game newGame = new Game(mockUI, testBoard);

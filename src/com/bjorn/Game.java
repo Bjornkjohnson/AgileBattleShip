@@ -3,10 +3,12 @@ package com.bjorn;
 public class Game {
     UI gameUI;
     Board opponentBoard;
+    Ship battleship;
 
     Game(UI gameUI, Board opponentBoard) {
         this.gameUI = gameUI;
         this.opponentBoard = opponentBoard;
+        battleship = new Ship(4, 0, 0, "S");
     }
 
     public void startGame() {
@@ -21,13 +23,24 @@ public class Game {
 
     private void setUpComputerBoard() {
         opponentBoard.placeShip(0,0, "S");
+        opponentBoard.placeShip(1,0, "S");
+        opponentBoard.placeShip(2,0, "S");
+        opponentBoard.placeShip(3,0, "S");
     }
 
-    public void fireOnBoard() {
+    private void fireOnBoard() {
         gameUI.promptForXCoordinate();
         int x = gameUI.getUserInput();
         gameUI.promptForYCoordinate();
         int y = gameUI.getUserInput();
-        opponentBoard.upDateBoardState(x,y);
+
+        if (battleship.checkHit(x + y*10)) {
+            opponentBoard.upDateBoardState(x,y, "H");
+        } else {
+            opponentBoard.upDateBoardState(x,y, "M");
+        }
+        if (battleship.isSunk()) {
+            battleship.updateSunkSymbol(opponentBoard);
+        }
     }
 }

@@ -22,10 +22,9 @@ public class UI {
             "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗███████║██║  ██║██║██║     \n" +
             "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     \n";
 
-    public static int getUserInput() {
+    public int getUserInput() {
         Scanner input = new Scanner(System.in);
-        int userInput = input.nextInt();
-        return userInput;
+        return input.nextInt();
     }
 
     public void printWelcome(){
@@ -46,6 +45,7 @@ public class UI {
         }
     }
     public void printBoard(Board boardState) {
+        System.out.print(ANSI_CLS_HOME);
         printXAxisNumbers();
         for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
             printYAxisNumbers(yCoordinate);
@@ -57,9 +57,8 @@ public class UI {
     }
 
     private void printCellState(Board boardState, int xCoordinate, int yCoordinate) {
-        int cellNumber = xCoordinate + yCoordinate*10;
         System.out.print("_");
-        System.out.print(boardState.getCellState(cellNumber));
+        System.out.print(boardState.getCellState(xCoordinate, yCoordinate));
         System.out.print("_|");
     }
 

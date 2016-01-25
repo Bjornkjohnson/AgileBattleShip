@@ -13,15 +13,21 @@ public class Board {
         return boardState;
     }
 
-    public String getCellState(int cellCoordinate) {
+    public String getCellState(int xCoordinate, int yCoordinate) {
+        int cellCoordinate = convertCoordinateToInt(xCoordinate, yCoordinate);
         return boardState.getOrDefault(cellCoordinate, "~");
     }
 
 
-    public void upDateBoardState(int coordinates) {
-        if (getCellState(coordinates) == "~"){
-            boardState.put(coordinates,"M");
+    public void upDateBoardState(int xCoordinate, int yCoordinate) {
+        int cellCoordinate = convertCoordinateToInt(xCoordinate, yCoordinate);
+        if (getCellState(xCoordinate, yCoordinate) == "~"){
+            boardState.put(cellCoordinate,"M");
         }
 
+    }
+
+    private int convertCoordinateToInt(int xCoordinate, int yCoordinate) {
+        return xCoordinate + yCoordinate*10;
     }
 }

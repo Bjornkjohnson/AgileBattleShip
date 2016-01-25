@@ -24,12 +24,12 @@ public class BoardTest {
 
     @Test
     public void getEmptyCell() {
-        assertEquals("~", newBoard.getCellState(1));
+        assertEquals("~", newBoard.getCellState(0,1));
     }
 
     @Test
     public void getMissCell() {
-        newBoard.upDateBoardState(1);
-        assertEquals("M", newBoard.getCellState(1));
+        newBoard.upDateBoardState(0,1);
+        assertEquals("M", newBoard.getCellState(0,1));
     }
 }

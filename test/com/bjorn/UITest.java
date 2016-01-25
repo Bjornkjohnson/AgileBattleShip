@@ -140,4 +140,24 @@ public class UITest {
         assertEquals(prompt, outContent.toString());
     }
 
+    @Test
+    public void shouldNotPrintShipOnOppenentBoard() throws Exception {
+        Board oneShip = new Board();
+        oneShip.placeShip(0,0, "S");
+        String printedBoard = ANSI_CLS_HOME +
+                "   0   1   2   3   4   5   6   7   8   9  \n" +
+                "0|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "1|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "2|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "3|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "4|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "5|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "6|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "7|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "8|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n" +
+                "9|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|_~_|\n";
+        newUI.printBoard(oneShip);
+        assertEquals(printedBoard, outContent.toString());
+    }
+
 }

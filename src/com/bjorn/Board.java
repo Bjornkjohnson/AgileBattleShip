@@ -23,11 +23,19 @@ public class Board {
         int cellCoordinate = convertCoordinateToInt(xCoordinate, yCoordinate);
         if (getCellState(xCoordinate, yCoordinate) == "~"){
             boardState.put(cellCoordinate,"M");
+        } else {
+            boardState.put(cellCoordinate,"H");
         }
 
+    }
+
+    public void placeShip(int xCoordinate, int yCoordinate, String symbol) {
+        int cellCoordinate = convertCoordinateToInt(xCoordinate, yCoordinate);
+        boardState.put(cellCoordinate, symbol);
     }
 
     private int convertCoordinateToInt(int xCoordinate, int yCoordinate) {
         return xCoordinate + yCoordinate*10;
     }
+
 }

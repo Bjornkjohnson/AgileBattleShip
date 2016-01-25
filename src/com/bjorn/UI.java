@@ -57,8 +57,13 @@ public class UI {
     }
 
     private void printCellState(Board boardState, int xCoordinate, int yCoordinate) {
+        String cellState = boardState.getCellState(xCoordinate, yCoordinate);
         System.out.print("_");
-        System.out.print(boardState.getCellState(xCoordinate, yCoordinate));
+        if (cellState != "S"){
+            System.out.print(cellState);
+        } else {
+            System.out.print("~");
+        }
         System.out.print("_|");
     }
 

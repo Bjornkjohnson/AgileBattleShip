@@ -32,4 +32,11 @@ public class BoardTest {
         newBoard.upDateBoardState(0,1);
         assertEquals("M", newBoard.getCellState(0,1));
     }
+
+    @Test
+    public void testUpdateWithHit() {
+        newBoard.placeShip(0,0, "S");
+        newBoard.upDateBoardState(0,0);
+        assertEquals("H", newBoard.getCellState(0,0));
+    }
 }

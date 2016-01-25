@@ -10,10 +10,17 @@ public class Game {
     }
 
     public void startGame() {
+        setUpComputerBoard();
         gameUI.printWelcome();
+        for (int i = 0; i < 5; i++){
+            gameUI.printBoard(opponentBoard);
+            fireOnBoard();
+        }
         gameUI.printBoard(opponentBoard);
-        fireOnBoard();
-        gameUI.printBoard(opponentBoard);
+    }
+
+    private void setUpComputerBoard() {
+        opponentBoard.placeShip(0,0, "S");
     }
 
     public void fireOnBoard() {

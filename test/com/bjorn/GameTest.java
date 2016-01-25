@@ -4,6 +4,10 @@ package com.bjorn;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import java.util.HashMap;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -15,7 +19,7 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockUI, times(1)).printWelcome();
+        verify(mockUI, atLeastOnce()).printWelcome();
     }
 
     @Test
@@ -24,7 +28,7 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockUI, times(2)).printBoard(mockBoard);
+        verify(mockUI, atLeastOnce()).printBoard(mockBoard);
     }
 
     @Test
@@ -33,7 +37,7 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockUI, times(1)).promptForXCoordinate();
+        verify(mockUI, atLeastOnce()).promptForXCoordinate();
     }
 
     @Test
@@ -42,7 +46,7 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockUI, times(1)).promptForYCoordinate();
+        verify(mockUI, atLeastOnce()).promptForYCoordinate();
     }
 
     @Test
@@ -51,7 +55,7 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockUI, times(2)).getUserInput();
+        verify(mockUI, atLeastOnce()).getUserInput();
     }
 
     @Test
@@ -60,6 +64,17 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockBoard, times(1)).upDateBoardState(0, 0);
+        verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0);
+    }
+
+    @Test
+    public void testComputerShipPlacement() {
+        HashMap<Integer, String> testBoardState  = new HashMap<>();
+        testBoardState.put(0, "H");
+        UI mockUI = Mockito.mock(UI.class);
+        Board testBoard = new Board();
+        Game newGame = new Game(mockUI, testBoard);
+        newGame.startGame();
+        assertEquals(testBoardState, testBoard.getBoardState());
     }
 }

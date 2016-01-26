@@ -21,6 +21,14 @@ public class UI {
             "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝  ╚════██║██╔══██║██║██╔═══╝ \n" +
             "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗███████║██║  ██║██║██║     \n" +
             "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     \n";
+    private static final String shipSunk = "" +
+            "███████╗██╗  ██╗██╗██████╗     ███████╗██╗   ██╗███╗   ██╗██╗  ██╗██╗\n" +
+            "██╔════╝██║  ██║██║██╔══██╗    ██╔════╝██║   ██║████╗  ██║██║ ██╔╝██║\n" +
+            "███████╗███████║██║██████╔╝    ███████╗██║   ██║██╔██╗ ██║█████╔╝ ██║\n" +
+            "╚════██║██╔══██║██║██╔═══╝     ╚════██║██║   ██║██║╚██╗██║██╔═██╗ ╚═╝\n" +
+            "███████║██║  ██║██║██║         ███████║╚██████╔╝██║ ╚████║██║  ██╗██╗\n" +
+            "╚══════╝╚═╝  ╚═╝╚═╝╚═╝         ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝\n" +
+            "                                                                     \n";
 
     public int getUserInput() {
         Scanner input = new Scanner(System.in);
@@ -87,5 +95,13 @@ public class UI {
 
     public void promptForYCoordinate() {
         System.out.print("Please Enter Y Coordinate: ");
+    }
+
+    public void printSunk() {
+        System.out.print(ANSI_CLS_HOME);
+        for (int i = 0; i < 20; i++) {
+            printTitleAndWait(ANSI_RED+shipSunk+ANSI_RESET);
+            printTitleAndWait(shipSunk);
+        }
     }
 }

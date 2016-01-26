@@ -160,4 +160,27 @@ public class UITest {
         assertEquals(printedBoard, outContent.toString());
     }
 
+    @Test
+    public void testShipSunkMessage() throws Exception {
+        String testSunkMessage = "";
+        String shipSunk = "" +
+                "███████╗██╗  ██╗██╗██████╗     ███████╗██╗   ██╗███╗   ██╗██╗  ██╗██╗\n" +
+                "██╔════╝██║  ██║██║██╔══██╗    ██╔════╝██║   ██║████╗  ██║██║ ██╔╝██║\n" +
+                "███████╗███████║██║██████╔╝    ███████╗██║   ██║██╔██╗ ██║█████╔╝ ██║\n" +
+                "╚════██║██╔══██║██║██╔═══╝     ╚════██║██║   ██║██║╚██╗██║██╔═██╗ ╚═╝\n" +
+                "███████║██║  ██║██║██║         ███████║╚██████╔╝██║ ╚████║██║  ██╗██╗\n" +
+                "╚══════╝╚═╝  ╚═╝╚═╝╚═╝         ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝\n" +
+                "                                                                     \n";
+        testSunkMessage += ANSI_CLS_HOME;
+        for (int i = 0; i < 20; i++) {
+            testSunkMessage += ANSI_RED+shipSunk+ANSI_RESET;
+            testSunkMessage += ANSI_CLS_HOME;
+            testSunkMessage += shipSunk;
+            testSunkMessage += ANSI_CLS_HOME;
+
+        }
+        newUI.printSunk();
+        assertEquals(testSunkMessage, outContent.toString());
+    }
+
 }

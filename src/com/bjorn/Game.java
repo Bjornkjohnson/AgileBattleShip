@@ -36,11 +36,13 @@ public class Game {
 
         if (battleship.checkHit(x + y*10)) {
             opponentBoard.upDateBoardState(x,y, "H");
+            if (battleship.isSunk()) {
+                battleship.updateSunkSymbol(opponentBoard);
+                gameUI.printSunk();
+            }
         } else {
             opponentBoard.upDateBoardState(x,y, "M");
         }
-        if (battleship.isSunk()) {
-            battleship.updateSunkSymbol(opponentBoard);
-        }
+
     }
 }

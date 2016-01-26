@@ -19,7 +19,7 @@ public class GameTest {
         Board mockBoard = Mockito.mock(Board.class);
         Game newGame = new Game(mockUI, mockBoard);
         newGame.startGame();
-        verify(mockUI, atLeastOnce()).printWelcome();
+        verify(mockUI, times(1)).printWelcome();
     }
 
     @Test

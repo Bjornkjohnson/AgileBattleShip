@@ -1,16 +1,18 @@
 package com.bjorn;
 
+import java.util.HashMap;
+
 /**
  * Created by bjornjohnson on 1/12/16.
  */
 public class Ship {
     private int length;
-    private int hits = 0;
     private boolean sunk = false;
     private int position;
     private int orientationIterator;
     private int endOfShip;
     private String symbol;
+    private HashMap<Integer, Boolean> hits;
 
     public Ship(int length, int startingCoordinate, int orientation, String symbol) {
         this.length = length;
@@ -18,6 +20,7 @@ public class Ship {
         setOrientationIterator(orientation);
         endOfShip = position + length*orientationIterator;
         this.symbol = symbol;
+        hits = new HashMap<>();
     }
 
     private void setOrientationIterator(int orientation) {
@@ -36,22 +39,22 @@ public class Ship {
     public boolean checkHit(int coordinate) {
         for (int i = position; i < endOfShip; i += orientationIterator) {
             if (i == coordinate){
-                incrementHits();
+                incrementHits(coordinate);
                 return true;
             }
         }
         return false;
     }
 
-    private void incrementHits() {
-        hits++;
-        if (hits == length) {
+    private void incrementHits(int coordinate) {
+        hits.put(coordinate, true);
+        if (hits.size() == length) {
             sunk = true;
         }
     }
 
     public int getHits() {
-        return hits;
+        return hits.size();
     }
 
     public boolean isSunk() {

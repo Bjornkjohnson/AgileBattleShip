@@ -97,4 +97,11 @@ public class ShipTest {
         newShip.updateSunkSymbol(newBoard);
         assertEquals(testState, newBoard.getBoardState());
     }
+
+    @Test
+    public void rundundantHitDoesNotIncreaseHits() throws Exception {
+        newShip.checkHit(0);
+        newShip.checkHit(0);
+        assertEquals(1, newShip.getHits());
+    }
 }

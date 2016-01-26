@@ -101,29 +101,22 @@ public class UITest {
 
     @Test
     public void testPrintEmptyGameBoard() throws Exception {
-
-
-
         newUI.printBoard(newBoard);
         assertEquals(emptyBoard, outContent.toString());
     }
 
     @Test
     public void testPrintOneMissGameBoard() throws Exception {
-
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(0, 0, "M");
-
         newUI.printBoard(oneMissBoard);
         assertEquals(singleMissBoard, outContent.toString());
     }
 
     @Test
     public void testMissInMiddleOfBoard() throws Exception {
-
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(5, 4, "M");
-
         newUI.printBoard(oneMissBoard);
         assertEquals(middleMissBoard, outContent.toString());
     }
@@ -143,7 +136,6 @@ public class UITest {
             testWelcome += ANSI_CLS_HOME;
             testWelcome += testTitle;
             testWelcome += ANSI_CLS_HOME;
-
         }
         return testWelcome;
     }
@@ -173,7 +165,6 @@ public class UITest {
     public void shouldNotPrintShipOnOppenentBoard() throws Exception {
         Board oneShip = new Board();
         oneShip.placeShip(0,0, "S");
-
         newUI.printBoard(oneShip);
         assertEquals(printedBoard, outContent.toString());
     }
@@ -181,14 +172,12 @@ public class UITest {
     @Test
     public void testShipSunkMessage() throws Exception {
         String testSunkMessage = "";
-
         testSunkMessage += ANSI_CLS_HOME;
         for (int i = 0; i < 20; i++) {
             testSunkMessage += ANSI_RED+shipSunk+ANSI_RESET;
             testSunkMessage += ANSI_CLS_HOME;
             testSunkMessage += shipSunk;
             testSunkMessage += ANSI_CLS_HOME;
-
         }
         newUI.printSunk();
         assertEquals(testSunkMessage, outContent.toString());

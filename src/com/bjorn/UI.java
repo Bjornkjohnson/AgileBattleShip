@@ -4,31 +4,6 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class UI {
-    private static final String ANSI_RESET = "\u001B[0m";
-    private static final String ANSI_RED = "\u001B[31m";
-    private static final String ANSI_CLS_HOME = "\033[2J\u001B[H";
-    private static final String title = "" +
-            "██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗ \n" +
-            "██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗\n" +
-            "██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗         ██║   ██║   ██║\n" +
-            "██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝         ██║   ██║   ██║\n" +
-            "╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗       ██║   ╚██████╔╝\n" +
-            " ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝       ╚═╝    ╚═════╝ \n" +
-            "                                                                                    \n" +
-            "██████╗  █████╗ ████████╗████████╗██╗     ███████╗███████╗██╗  ██╗██╗██████╗ \n" +
-            "██╔══██╗██╔══██╗╚══██╔══╝╚══██╔══╝██║     ██╔════╝██╔════╝██║  ██║██║██╔══██╗\n" +
-            "██████╔╝███████║   ██║      ██║   ██║     █████╗  ███████╗███████║██║██████╔╝\n" +
-            "██╔══██╗██╔══██║   ██║      ██║   ██║     ██╔══╝  ╚════██║██╔══██║██║██╔═══╝ \n" +
-            "██████╔╝██║  ██║   ██║      ██║   ███████╗███████╗███████║██║  ██║██║██║     \n" +
-            "╚═════╝ ╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝     \n";
-    private static final String shipSunk = "" +
-            "███████╗██╗  ██╗██╗██████╗     ███████╗██╗   ██╗███╗   ██╗██╗  ██╗██╗\n" +
-            "██╔════╝██║  ██║██║██╔══██╗    ██╔════╝██║   ██║████╗  ██║██║ ██╔╝██║\n" +
-            "███████╗███████║██║██████╔╝    ███████╗██║   ██║██╔██╗ ██║█████╔╝ ██║\n" +
-            "╚════██║██╔══██║██║██╔═══╝     ╚════██║██║   ██║██║╚██╗██║██╔═██╗ ╚═╝\n" +
-            "███████║██║  ██║██║██║         ███████║╚██████╔╝██║ ╚████║██║  ██╗██╗\n" +
-            "╚══════╝╚═╝  ╚═╝╚═╝╚═╝         ╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚═╝\n" +
-            "                                                                     \n";
 
     public int getUserInput() {
         Scanner input = new Scanner(System.in);
@@ -36,10 +11,10 @@ public class UI {
     }
 
     public void printWelcome(){
-        System.out.print(ANSI_CLS_HOME);
+        System.out.print(GameConstants.ANSI_CLS_HOME);
         for (int i = 0; i < 20; i++) {
-            printTitleAndWait(ANSI_RED+title+ANSI_RESET);
-            printTitleAndWait(title);
+            printTitleAndWait(GameConstants.ANSI_RED+GameConstants.title+GameConstants.ANSI_RESET);
+            printTitleAndWait(GameConstants.title);
         }
     }
 
@@ -47,13 +22,13 @@ public class UI {
         System.out.print(title);
         try {
             TimeUnit.MILLISECONDS.sleep(50);
-            System.out.print(ANSI_CLS_HOME);
+            System.out.print(GameConstants.ANSI_CLS_HOME);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
     public void printBoard(Board boardState) {
-        System.out.print(ANSI_CLS_HOME);
+        System.out.print(GameConstants.ANSI_CLS_HOME);
         printXAxisNumbers();
         for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
             printYAxisNumbers(yCoordinate);
@@ -98,10 +73,10 @@ public class UI {
     }
 
     public void printSunk() {
-        System.out.print(ANSI_CLS_HOME);
+        System.out.print(GameConstants.ANSI_CLS_HOME);
         for (int i = 0; i < 20; i++) {
-            printTitleAndWait(ANSI_RED+shipSunk+ANSI_RESET);
-            printTitleAndWait(shipSunk);
+            printTitleAndWait(GameConstants.ANSI_RED+GameConstants.shipSunk+GameConstants.ANSI_RESET);
+            printTitleAndWait(GameConstants.shipSunk);
         }
     }
 }

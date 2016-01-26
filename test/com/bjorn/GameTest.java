@@ -1,9 +1,11 @@
 package com.bjorn;
 
 
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import java.util.HashMap;
 
 import static org.junit.Assert.assertEquals;
@@ -12,58 +14,46 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 public class GameTest {
+    UI mockUI;
+    Board mockBoard;
+    Game newGame;
+
+    @Before
+    public void setUp() {
+        mockUI = Mockito.mock(UI.class);
+        mockBoard = Mockito.mock(Board.class);
+        newGame = new Game(mockUI, mockBoard);
+        newGame.startGame();
+
+    }
 
     @Test
     public void checkIfWelcomeIsCalled() {
-        UI mockUI = Mockito.mock(UI.class);
-        Board mockBoard = Mockito.mock(Board.class);
-        Game newGame = new Game(mockUI, mockBoard);
-        newGame.startGame();
         verify(mockUI, times(1)).printWelcome();
     }
 
     @Test
     public void checkIfPrintBoardIsCalled() {
-        UI mockUI = Mockito.mock(UI.class);
-        Board mockBoard = Mockito.mock(Board.class);
-        Game newGame = new Game(mockUI, mockBoard);
-        newGame.startGame();
         verify(mockUI, atLeastOnce()).printBoard(mockBoard);
     }
 
     @Test
     public void checkIfPromptForXCoordinateIsCalled() {
-        UI mockUI = Mockito.mock(UI.class);
-        Board mockBoard = Mockito.mock(Board.class);
-        Game newGame = new Game(mockUI, mockBoard);
-        newGame.startGame();
         verify(mockUI, atLeastOnce()).promptForXCoordinate();
     }
 
     @Test
     public void checkIfPromptForYCoordinateIsCalled() {
-        UI mockUI = Mockito.mock(UI.class);
-        Board mockBoard = Mockito.mock(Board.class);
-        Game newGame = new Game(mockUI, mockBoard);
-        newGame.startGame();
         verify(mockUI, atLeastOnce()).promptForYCoordinate();
     }
 
     @Test
     public void checkIfGetUserInputIsCalled() {
-        UI mockUI = Mockito.mock(UI.class);
-        Board mockBoard = Mockito.mock(Board.class);
-        Game newGame = new Game(mockUI, mockBoard);
-        newGame.startGame();
         verify(mockUI, atLeastOnce()).getUserInput();
     }
 
     @Test
     public void checkIfUpdateBoardStateIsCalled() {
-        UI mockUI = Mockito.mock(UI.class);
-        Board mockBoard = Mockito.mock(Board.class);
-        Game newGame = new Game(mockUI, mockBoard);
-        newGame.startGame();
         verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0, "H");
     }
 
@@ -74,7 +64,6 @@ public class GameTest {
         testBoardState.put(1, "S");
         testBoardState.put(2, "S");
         testBoardState.put(3, "S");
-        UI mockUI = Mockito.mock(UI.class);
         Board testBoard = new Board();
         Game newGame = new Game(mockUI, testBoard);
         newGame.startGame();

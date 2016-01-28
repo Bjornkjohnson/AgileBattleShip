@@ -70,4 +70,12 @@ public class Ship {
             newBoard.upDateBoardState(i%10, i/10, "X");
         }
     }
+
+    public HashMap<Integer,String> getCoodinates() {
+        HashMap<Integer, String> coordinates = new HashMap<>();
+        for (int i = position; i < endOfShip; i += orientationIterator) {
+            coordinates.put(i, symbol);
+        }
+        return coordinates;
+    }
 }

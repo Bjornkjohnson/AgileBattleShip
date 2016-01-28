@@ -99,9 +99,17 @@ public class ShipTest {
     }
 
     @Test
-    public void rundundantHitDoesNotIncreaseHits() throws Exception {
+    public void redundantHitDoesNotIncreaseHits() throws Exception {
         newShip.checkHit(0);
         newShip.checkHit(0);
         assertEquals(1, newShip.getHits());
+    }
+
+    @Test
+    public void testReturnShipCoordinates() throws Exception {
+        HashMap<Integer, String> testCoordinates = new HashMap<>();
+        testCoordinates.put(0, "S");
+        testCoordinates.put(1, "S");
+        assertEquals(testCoordinates, newShip.getCoodinates());
     }
 }

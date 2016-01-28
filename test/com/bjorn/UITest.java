@@ -90,7 +90,8 @@ public class UITest {
     @Test
     public void shouldNotPrintShipOnOppenentBoard() throws Exception {
         Board oneShip = new Board();
-        oneShip.placeShip(0,0, "S");
+        Ship newShip = new Ship(2, 0, 0, "S");
+        oneShip.placeShip(newShip);
         newUI.printBoard(oneShip);
         assertEquals(GameConstants.printedBoard, outContent.toString());
     }

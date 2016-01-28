@@ -22,10 +22,7 @@ public class Game {
     }
 
     private void setUpComputerBoard() {
-        opponentBoard.placeShip(0,0, "S");
-        opponentBoard.placeShip(1,0, "S");
-        opponentBoard.placeShip(2,0, "S");
-        opponentBoard.placeShip(3,0, "S");
+        opponentBoard.placeShip(battleship);
     }
 
     private void fireOnBoard() {

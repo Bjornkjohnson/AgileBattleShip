@@ -24,9 +24,9 @@ public class Board {
         boardState.put(cellCoordinate, symbol);
     }
 
-    public void placeShip(int xCoordinate, int yCoordinate, String symbol) {
-        int cellCoordinate = convertCoordinateToInt(xCoordinate, yCoordinate);
-        boardState.put(cellCoordinate, symbol);
+    public void placeShip(Ship newShip) {
+        HashMap<Integer, String> coordinates = newShip.getCoodinates();
+        boardState.putAll(coordinates);
     }
 
     private int convertCoordinateToInt(int xCoordinate, int yCoordinate) {

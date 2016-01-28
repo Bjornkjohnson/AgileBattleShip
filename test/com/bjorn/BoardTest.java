@@ -35,7 +35,9 @@ public class BoardTest {
 
     @Test
     public void testUpdateWithHit() {
-        newBoard.placeShip(0,0, "S");
+        Ship newShip = new Ship(2, 0, 0, "S");
+        newBoard.placeShip(newShip);
+//        newBoard.placeShip(0,0, "S");
         newBoard.upDateBoardState(0,0, "H");
         assertEquals("H", newBoard.getCellState(0,0));
     }

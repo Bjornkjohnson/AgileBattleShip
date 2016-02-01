@@ -19,7 +19,7 @@ public class Game {
         setUpComputerBoard();
         gameUI.printWelcome();
         gameLoop();
-        System.out.println("GAME OVER");
+        gameUI.printGameOver();
     }
 
     private void gameLoop () {

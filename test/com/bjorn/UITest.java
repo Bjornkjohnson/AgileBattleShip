@@ -109,4 +109,18 @@ public class UITest {
         newUI.printSunk();
         assertEquals(testSunkMessage, outContent.toString());
     }
+
+    @Test
+    public void testGameOverMessage() throws Exception {
+        String testSunkMessage = "";
+        testSunkMessage += GameConstants.ANSI_CLS_HOME;
+        for (int i = 0; i < 20; i++) {
+            testSunkMessage += GameConstants.ANSI_RED+GameConstants.gameOver+GameConstants.ANSI_RESET;
+            testSunkMessage += GameConstants.ANSI_CLS_HOME;
+            testSunkMessage += GameConstants.gameOver;
+            testSunkMessage += GameConstants.ANSI_CLS_HOME;
+        }
+        newUI.printGameOver();
+        assertEquals(testSunkMessage, outContent.toString());
+    }
 }

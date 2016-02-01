@@ -79,4 +79,12 @@ public class UI {
             printTitleAndWait(GameConstants.shipSunk);
         }
     }
+
+    public void printGameOver() {
+        System.out.print(GameConstants.ANSI_CLS_HOME);
+        for (int i = 0; i < 20; i++) {
+            printTitleAndWait(GameConstants.ANSI_RED+GameConstants.gameOver+GameConstants.ANSI_RESET);
+            printTitleAndWait(GameConstants.gameOver);
+        }
+    }
 }

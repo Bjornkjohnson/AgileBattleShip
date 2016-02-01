@@ -18,12 +18,19 @@ public class Game {
     public void startGame() {
         setUpComputerBoard();
         gameUI.printWelcome();
-        while (!gameOver()) {
+        gameLoop();
+        System.out.println("GAME OVER");
+    }
+
+    private void gameLoop () {
+        for (int i = 0; i < 100; i++) {
             gameUI.printBoard(opponentBoard);
             fireOnBoard();
+            if (gameOver()){
+                break;
+            }
         }
         gameUI.printBoard(opponentBoard);
-        System.out.println("GAME OVER");
     }
 
     private boolean gameOver() {

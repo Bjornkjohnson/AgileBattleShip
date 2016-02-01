@@ -57,16 +57,4 @@ public class GameTest {
         verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0, "H");
     }
 
-    @Test
-    public void testComputerShipPlacement() {
-        HashMap<Integer, String> testBoardState  = new HashMap<>();
-        testBoardState.put(0, "H");
-        testBoardState.put(1, "S");
-        testBoardState.put(2, "S");
-        testBoardState.put(3, "S");
-        Board testBoard = new Board();
-        Game newGame = new Game(mockUI, testBoard);
-        newGame.startGame();
-        assertEquals(testBoardState, testBoard.getBoardState());
-    }
 }

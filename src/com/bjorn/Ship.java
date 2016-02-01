@@ -71,7 +71,7 @@ public class Ship {
         }
     }
 
-    public HashMap<Integer,String> getCoodinates() {
+    public HashMap<Integer,String> getCoordinates() {
         HashMap<Integer, String> coordinates = new HashMap<>();
         for (int i = position; i < endOfShip; i += orientationIterator) {
             coordinates.put(i, symbol);

@@ -44,6 +44,7 @@ public class Game {
                     fleet[i].updateSunkSymbol(opponentBoard);
                     gameUI.printSunk();
                 }
+                break;
             } else {
                 opponentBoard.upDateBoardState(x,y, "M");
             }

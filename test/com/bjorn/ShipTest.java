@@ -108,8 +108,10 @@ public class ShipTest {
     @Test
     public void testReturnShipCoordinates() throws Exception {
         HashMap<Integer, String> testCoordinates = new HashMap<>();
-        testCoordinates.put(0, "S");
-        testCoordinates.put(1, "S");
-        assertEquals(testCoordinates, newShip.getCoodinates());
+        Ship testShip = new Ship(3,10,0, "S");
+        testCoordinates.put(10, "S");
+        testCoordinates.put(11, "S");
+        testCoordinates.put(12, "S");
+        assertEquals(testCoordinates, testShip.getCoordinates());
     }
 }

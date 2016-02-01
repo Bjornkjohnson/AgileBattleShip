@@ -25,7 +25,7 @@ public class Board {
     }
 
     public void placeShip(Ship newShip) {
-        HashMap<Integer, String> coordinates = newShip.getCoodinates();
+        HashMap<Integer, String> coordinates = newShip.getCoordinates();
         boardState.putAll(coordinates);
     }
 

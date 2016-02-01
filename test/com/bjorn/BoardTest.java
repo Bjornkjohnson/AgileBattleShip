@@ -56,4 +56,12 @@ public class BoardTest {
         newBoard.upDateBoardState(0,0, "H");
         assertEquals("H", newBoard.getCellState(0,0));
     }
+
+    @Test(expected = RuntimeException.class)
+    public void shouldNotOverlapShips() {
+        Ship newShip1 = new Ship(2, 0, 0, "S");
+        Ship newShip2 = new Ship(2, 1, 0, "S");
+        newBoard.placeShip(newShip1);
+        newBoard.placeShip(newShip2);
+    }
 }

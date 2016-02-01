@@ -18,11 +18,21 @@ public class Game {
     public void startGame() {
         setUpComputerBoard();
         gameUI.printWelcome();
-        for (int i = 0; i < 20; i++){
+        while (!gameOver()) {
             gameUI.printBoard(opponentBoard);
             fireOnBoard();
         }
         gameUI.printBoard(opponentBoard);
+        System.out.println("GAME OVER");
+    }
+
+    private boolean gameOver() {
+        for (int i = 0; i < fleet.length; i++) {
+            if (!fleet[i].isSunk()) {
+                return false;
+            }
+        }
+        return true;
     }
 
     private void setUpComputerBoard() {

@@ -1,5 +1,7 @@
 package com.bjorn;
 
+import java.awt.*;
+
 public class Game {
     UI gameUI;
     Board opponentBoard;
@@ -54,7 +56,12 @@ public class Game {
         gameUI.promptForYCoordinate();
         int y = gameUI.getUserInput();
 
-        for (int i = 0; i < 5; i++) {
+        checkFleetForHit(x,y);
+
+    }
+
+    private void checkFleetForHit (int x, int y) {
+        for (int i = 0; i < fleet.length; i++) {
             if (fleet[i].checkHit(x + y*10)) {
                 opponentBoard.upDateBoardState(x,y, "H");
                 if (fleet[i].isSunk()) {
@@ -66,6 +73,5 @@ public class Game {
                 opponentBoard.upDateBoardState(x,y, "M");
             }
         }
-
     }
 }

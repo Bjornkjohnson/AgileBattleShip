@@ -5,9 +5,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.atLeastOnce;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 public class GameTest {
     UI mockUI;
@@ -50,7 +48,7 @@ public class GameTest {
 
     @Test
     public void checkIfUpdateBoardStateIsCalled() {
-        verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0, "H");
+        verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0, "M");
     }
 
 }

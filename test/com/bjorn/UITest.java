@@ -91,6 +91,13 @@ public class UITest {
         assertEquals(testGameOverMessage, outContent.toString());
     }
 
+    @Test
+    public void testInvalidInputMessage() throws Exception {
+        String testInvalidInputMessage = buildMessage(GameConstants.invalidInput);
+        newUI.printInvalidInput();
+        assertEquals(testInvalidInputMessage, outContent.toString());
+    }
+
     private String buildMessage(String message) {
         String builtString = "";
         builtString += GameConstants.ANSI_CLS_HOME;
@@ -102,4 +109,5 @@ public class UITest {
         }
         return builtString;
     }
+
 }

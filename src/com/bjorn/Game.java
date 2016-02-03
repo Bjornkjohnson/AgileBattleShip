@@ -1,5 +1,8 @@
 package com.bjorn;
 
+import jdk.nashorn.internal.ir.WhileNode;
+import jdk.nashorn.internal.runtime.regexp.joni.encoding.CharacterType;
+
 import static java.lang.Character.getNumericValue;
 import static java.lang.Character.toLowerCase;
 
@@ -47,15 +50,28 @@ public class Game {
 
 
     private void fireOnBoard() {
-        gameUI.promptForCoordinates();
-        String coordinates = gameUI.getUserInput();
-
-        char yChar = coordinates.charAt(0);
-        yChar = toLowerCase(yChar);
-        int y = yChar - 'a';
+        String coordinates = getValidatedInput();
+        int y = changeCharToInt(coordinates.charAt(0));
         int x = getNumericValue(coordinates.charAt(1));
         checkFleetForHit(x,y);
+    }
 
+    private int changeCharToInt(char letter) {
+        letter = toLowerCase(letter);
+        int number = letter - 'a';
+        return number;
+    }
+
+    private String getValidatedInput() {
+        gameUI.promptForCoordinates();
+        String coordinates = gameUI.getUserInput();
+        while (!coordinates.matches("^([a-jA-J]\\p{Digit})$")) {
+            gameUI.printInvalidInput();
+            gameUI.printBoard(opponentBoard);
+            gameUI.promptForCoordinates();
+            coordinates = gameUI.getUserInput();
+        }
+        return coordinates;
     }
 
     private void checkFleetForHit (int x, int y) {

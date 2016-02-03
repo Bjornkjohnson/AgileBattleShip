@@ -1,8 +1,5 @@
 package com.bjorn;
 
-import java.awt.*;
-import java.util.Random;
-
 public class Game {
     UI gameUI;
     Board opponentBoard;
@@ -19,29 +16,7 @@ public class Game {
         newSetup.randomBoard(fleet,opponentBoard);
     }
 
-    private void randomShipSetup() {
-        Random r = new Random();
-        int Low = 0;
-        int High = 99;
-
-        for (int i = 0; i < fleet.length; i++) {
-           while (true) {
-               int random = r.nextInt(High-Low) + Low;
-               try {
-                   fleet[i] = new Ship(2, 0, "S");
-                   fleet[i].updatePosition(random);
-                   opponentBoard.placeShip(fleet[i]);
-                   break;
-               } catch (RuntimeException e) {
-
-               }
-
-           }
-        }
-    }
-
     public void startGame() {
-        //setUpComputerBoard();
         gameUI.printWelcome();
         gameLoop();
         gameUI.printGameOver();
@@ -67,11 +42,6 @@ public class Game {
         return true;
     }
 
-    private void setUpComputerBoard() {
-        for (int i = 0; i < 5; i++) {
-            opponentBoard.placeShip(fleet[i]);
-        }
-    }
 
     private void fireOnBoard() {
         gameUI.promptForXCoordinate();

@@ -27,22 +27,6 @@ public class BoardTest {
         assertEquals("~", newBoard.getCellState(0,1));
     }
 
-//    @Test
-//    public void placingOneShip() {
-//        placeMultipleItemsOnBoard(30, 4, boardState);
-//        Ship newShip = new Ship(4, 30, 0, "S");
-//        newBoard.placeShip(newShip);
-//        assertEquals(boardState, newBoard.getBoardState());
-//    }
-//
-//    private HashMap<Integer, String> placeMultipleItemsOnBoard(int position, int length, HashMap<Integer, String> boardState) {
-//        int end = position + length;
-//        for (; position < end; position++) {
-//            boardState.put(position, "S");
-//        }
-//        return boardState;
-//    }
-
     @Test
     public void getMissCell() {
         newBoard.upDateBoardState(0,1, "M");

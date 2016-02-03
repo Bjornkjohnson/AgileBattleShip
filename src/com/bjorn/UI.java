@@ -60,8 +60,12 @@ public class UI {
     }
 
     private void printYAxisNumbers(int yAxisNumber){
-        System.out.print(yAxisNumber);
+        System.out.print(convertNumberToLetter(yAxisNumber));
         System.out.print("|");
+    }
+
+    private String convertNumberToLetter(int num) {
+        return String.valueOf((char)(num + 'a'));
     }
 
     public void promptForCoordinates() {

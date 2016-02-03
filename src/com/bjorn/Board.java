@@ -27,7 +27,7 @@ public class Board {
     public void placeShip(Ship newShip) {
         HashMap<Integer, String> coordinates = newShip.getCoordinates();
         for (Integer key : coordinates.keySet()) {
-            if (boardState.containsKey(key)) {
+            if (boardState.containsKey(key) || key > 99) {
                 throw new RuntimeException();
             }
         }

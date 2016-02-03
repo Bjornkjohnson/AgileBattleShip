@@ -48,4 +48,18 @@ public class BoardTest {
         newBoard.placeShip(newShip1);
         newBoard.placeShip(newShip2);
     }
+
+    @Test(expected = RuntimeException.class)
+    public void shipShouldNotExtendOffBoardVertically() throws Exception {
+        Ship newShip1 = new Ship(2, 1, "S");
+        newShip1.updatePosition(99);
+        newBoard.placeShip(newShip1);
+    }
+
+    @Test(expected = RuntimeException.class)
+    public void shipShouldNotExtendOffBoardHorizontally() throws Exception {
+        Ship newShip1 = new Ship(2, 0, "S");
+        newShip1.updatePosition(99);
+        newBoard.placeShip(newShip1);
+    }
 }

@@ -1,24 +1,22 @@
 package com.bjorn;
 
-import java.awt.*;
-
 public class Game {
     UI gameUI;
     Board opponentBoard;
     Ship fleet[] = new Ship[5];
 
-    Game(UI gameUI, Board opponentBoard) {
+    Game(UI gameUI, Board opponentBoard, BoardSetup newSetup) {
         this.gameUI = gameUI;
         this.opponentBoard = opponentBoard;
-        fleet[0] = new Ship(2, 0, 0, "S");
-        fleet[1] = new Ship(3, 10, 0, "S");
-        fleet[2] = new Ship(3, 20, 0, "S");
-        fleet[3] = new Ship(4, 30, 0, "S");
-        fleet[4] = new Ship(5, 40, 0, "S");
+        fleet[0] = new Ship(2, 0, "S");
+        fleet[1] = new Ship(3, 0, "S");
+        fleet[2] = new Ship(3, 0, "S");
+        fleet[3] = new Ship(4, 0, "S");
+        fleet[4] = new Ship(5, 0, "S");
+        newSetup.randomBoard(fleet,opponentBoard);
     }
 
     public void startGame() {
-        setUpComputerBoard();
         gameUI.printWelcome();
         gameLoop();
         gameUI.printGameOver();
@@ -44,11 +42,6 @@ public class Game {
         return true;
     }
 
-    private void setUpComputerBoard() {
-        for (int i = 0; i < 5; i++) {
-            opponentBoard.placeShip(fleet[i]);
-        }
-    }
 
     private void fireOnBoard() {
         gameUI.promptForXCoordinate();

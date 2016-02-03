@@ -16,7 +16,7 @@ public class ShipTest {
 
     @Before
     public void setUp() {
-        newShip = new Ship(2, 0, 0, "S");
+        newShip = new Ship(2, 0, "S");
     }
 
     @Test
@@ -26,7 +26,7 @@ public class ShipTest {
 
     @Test
     public void makeNewShipOfLengthThree() throws Exception {
-        newShip = new Ship(3, 0, 0, "D");
+        newShip = new Ship(3, 0, "D");
         assertEquals(3, newShip.getLength());
     }
 
@@ -53,21 +53,23 @@ public class ShipTest {
 
     @Test
     public void testLastPositionIsHitInMiddleOfBoard() throws Exception {
-        newShip = new Ship(4, 13, 0, "B");
+        newShip = new Ship(4, 0, "B");
+        newShip.updatePosition(13);
         assertEquals(true, newShip.checkHit(15));
 
     }
 
     @Test
     public void testLastPositionIsHitInMiddleOfBoardForVerticalShip() throws Exception {
-        newShip = new Ship(4, 13, 1, "B");
+        newShip = new Ship(4, 1, "B");
+        newShip.updatePosition(13);
         assertEquals(true, newShip.checkHit(43));
 
     }
 
     @Test
     public void shipShouldReturnThreeIfHitThreeTimes() throws Exception {
-        newShip = new Ship(5, 0, 0, "A");
+        newShip = new Ship(5, 0, "A");
         newShip.checkHit(1);
         newShip.checkHit(2);
         newShip.checkHit(3);
@@ -108,7 +110,8 @@ public class ShipTest {
     @Test
     public void testReturnShipCoordinates() throws Exception {
         HashMap<Integer, String> testCoordinates = new HashMap<>();
-        Ship testShip = new Ship(3,10,0, "S");
+        Ship testShip = new Ship(3, 0, "S");
+        testShip.updatePosition(10);
         testCoordinates.put(10, "S");
         testCoordinates.put(11, "S");
         testCoordinates.put(12, "S");

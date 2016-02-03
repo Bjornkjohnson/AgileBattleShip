@@ -49,21 +49,9 @@ public class UITest {
 
     @Test
     public void testPrintWelcome() throws Exception {
-        String testWelcome = buildTitleString();
+        String testWelcome = buildMessage(GameConstants.title);
         newUI.printWelcome();
         assertEquals(testWelcome, outContent.toString());
-    }
-
-    private String buildTitleString() {
-        String testWelcome = "";
-        testWelcome += GameConstants.ANSI_CLS_HOME;
-        for (int i = 0; i < 20; i++) {
-            testWelcome += GameConstants.ANSI_RED+GameConstants.title+GameConstants.ANSI_RESET;
-            testWelcome += GameConstants.ANSI_CLS_HOME;
-            testWelcome += GameConstants.title;
-            testWelcome += GameConstants.ANSI_CLS_HOME;
-        }
-        return testWelcome;
     }
 
     @Test
@@ -90,7 +78,7 @@ public class UITest {
     @Test
     public void shouldNotPrintShipOnOppenentBoard() throws Exception {
         Board oneShip = new Board();
-        Ship newShip = new Ship(2, 0, 0, "S");
+        Ship newShip = new Ship(2, 0, "S");
         oneShip.placeShip(newShip);
         newUI.printBoard(oneShip);
         assertEquals(GameConstants.printedBoard, outContent.toString());
@@ -98,29 +86,27 @@ public class UITest {
 
     @Test
     public void testShipSunkMessage() throws Exception {
-        String testSunkMessage = "";
-        testSunkMessage += GameConstants.ANSI_CLS_HOME;
-        for (int i = 0; i < 20; i++) {
-            testSunkMessage += GameConstants.ANSI_RED+GameConstants.shipSunk+GameConstants.ANSI_RESET;
-            testSunkMessage += GameConstants.ANSI_CLS_HOME;
-            testSunkMessage += GameConstants.shipSunk;
-            testSunkMessage += GameConstants.ANSI_CLS_HOME;
-        }
+        String testSunkMessage = buildMessage(GameConstants.shipSunk);
         newUI.printSunk();
         assertEquals(testSunkMessage, outContent.toString());
     }
 
     @Test
     public void testGameOverMessage() throws Exception {
-        String testSunkMessage = "";
-        testSunkMessage += GameConstants.ANSI_CLS_HOME;
-        for (int i = 0; i < 20; i++) {
-            testSunkMessage += GameConstants.ANSI_RED+GameConstants.gameOver+GameConstants.ANSI_RESET;
-            testSunkMessage += GameConstants.ANSI_CLS_HOME;
-            testSunkMessage += GameConstants.gameOver;
-            testSunkMessage += GameConstants.ANSI_CLS_HOME;
-        }
+        String testGameOverMessage = buildMessage(GameConstants.gameOver);
         newUI.printGameOver();
-        assertEquals(testSunkMessage, outContent.toString());
+        assertEquals(testGameOverMessage, outContent.toString());
+    }
+
+    private String buildMessage(String message) {
+        String builtString = "";
+        builtString += GameConstants.ANSI_CLS_HOME;
+        for (int i = 0; i < 20; i++) {
+            builtString += GameConstants.ANSI_RED+message+GameConstants.ANSI_RESET;
+            builtString += GameConstants.ANSI_CLS_HOME;
+            builtString += message;
+            builtString += GameConstants.ANSI_CLS_HOME;
+        }
+        return builtString;
     }
 }

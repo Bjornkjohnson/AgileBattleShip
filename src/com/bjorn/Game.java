@@ -8,10 +8,15 @@ public class Game {
     Board opponentBoard;
     Ship fleet[] = new Ship[5];
 
-    Game(UI gameUI, Board opponentBoard) {
+    Game(UI gameUI, Board opponentBoard, BoardSetup newSetup) {
         this.gameUI = gameUI;
         this.opponentBoard = opponentBoard;
-        randomShipSetup();
+        fleet[0] = new Ship(2, 0, "S");
+        fleet[1] = new Ship(3, 0, "S");
+        fleet[2] = new Ship(3, 0, "S");
+        fleet[3] = new Ship(4, 0, "S");
+        fleet[4] = new Ship(5, 0, "S");
+        newSetup.randomBoard(fleet,opponentBoard);
     }
 
     private void randomShipSetup() {

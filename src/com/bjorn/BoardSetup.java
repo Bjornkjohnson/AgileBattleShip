@@ -7,7 +7,6 @@ public class BoardSetup {
         for (int i = 0; i < fleet.length; i++) {
             while (true) {
                 try {
-                    fleet[i] = new Ship(2, 0, "S");
                     fleet[i].updatePosition(getRandomNumber());
                     newBoard.placeShip(fleet[i]);
                     break;

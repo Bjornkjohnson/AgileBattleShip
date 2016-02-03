@@ -16,6 +16,7 @@ public class BoardSetupTest {
     @Before
     public void setUp() throws Exception {
         newFleet = new Ship[1];
+        newFleet[0] = new Ship(2,0,"S");
         testBoard = new Board();
         newPlacement = new BoardSetup();
     }

@@ -11,12 +11,14 @@ public class GameTest {
     UI mockUI;
     Board mockBoard;
     Game newGame;
+    BoardSetup newSetup;
 
     @Before
     public void setUp() {
         mockUI = Mockito.mock(UI.class);
         mockBoard = Mockito.mock(Board.class);
-        newGame = new Game(mockUI, mockBoard);
+        newSetup = new BoardSetup();
+        newGame = new Game(mockUI, mockBoard, newSetup);
         newGame.startGame();
 
     }

@@ -1,5 +1,8 @@
 package com.bjorn;
 
+import static java.lang.Character.getNumericValue;
+import static java.lang.Character.toLowerCase;
+
 public class Game {
     UI gameUI;
     Board opponentBoard;
@@ -44,11 +47,13 @@ public class Game {
 
 
     private void fireOnBoard() {
-        gameUI.promptForXCoordinate();
-        int x = gameUI.getUserInput();
-        gameUI.promptForYCoordinate();
-        int y = gameUI.getUserInput();
+        gameUI.promptForCoordinates();
+        String coordinates = gameUI.getUserInput();
 
+        char yChar = coordinates.charAt(0);
+        yChar = toLowerCase(yChar);
+        int y = yChar - 'a';
+        int x = getNumericValue(coordinates.charAt(1));
         checkFleetForHit(x,y);
 
     }

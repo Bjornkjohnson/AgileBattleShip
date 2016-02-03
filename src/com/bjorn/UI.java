@@ -5,9 +5,9 @@ import java.util.concurrent.TimeUnit;
 
 public class UI {
 
-    public int getUserInput() {
+    public String getUserInput() {
         Scanner input = new Scanner(System.in);
-        return input.nextInt();
+        return input.nextLine();
     }
 
     public void printWelcome(){
@@ -64,12 +64,8 @@ public class UI {
         System.out.print("|");
     }
 
-    public void promptForXCoordinate() {
-        System.out.print("Please Enter X Coordinate: ");
-    }
-
-    public void promptForYCoordinate() {
-        System.out.print("Please Enter Y Coordinate: ");
+    public void promptForCoordinates() {
+        System.out.print("Please Enter Coordinates: ");
     }
 
     public void printSunk() {

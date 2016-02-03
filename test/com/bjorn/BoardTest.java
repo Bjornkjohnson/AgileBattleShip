@@ -62,4 +62,11 @@ public class BoardTest {
         newShip1.updatePosition(99);
         newBoard.placeShip(newShip1);
     }
+
+    @Test(expected = RuntimeException.class)
+    public void shipShouldNotWrapAroundVoard() throws Exception {
+        Ship newShip1 = new Ship(5, 0, "S");
+        newShip1.updatePosition(8);
+        newBoard.placeShip(newShip1);
+    }
 }

@@ -8,6 +8,7 @@ public class BoardSetup {
             while (true) {
                 try {
                     fleet[i] = new Ship(2, 0, "S");
+                    fleet[i].updatePosition(getRandomNumber());
                     newBoard.placeShip(fleet[i]);
                     break;
                 } catch (RuntimeException e) {

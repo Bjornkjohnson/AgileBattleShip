@@ -23,7 +23,8 @@ public class Game {
            while (true) {
                int random = r.nextInt(High-Low) + Low;
                try {
-                   fleet[i] = new Ship(2, random, 0, "S");
+                   fleet[i] = new Ship(2, 0, "S");
+                   fleet[i].updatePosition(random);
                    opponentBoard.placeShip(fleet[i]);
                    break;
                } catch (RuntimeException e) {

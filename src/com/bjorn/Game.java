@@ -25,6 +25,7 @@ public class Game {
     public void startGame() {
         gameUI.printWelcome();
         gameLoop();
+        gameUI.printYouWin();
         gameUI.printGameOver();
     }
 

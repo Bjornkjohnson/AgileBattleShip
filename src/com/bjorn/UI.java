@@ -80,26 +80,26 @@ public class UI {
     }
 
     public void printSunk() {
-        System.out.print(GameConstants.ANSI_CLS_HOME);
-        for (int i = 0; i < 20; i++) {
-            printTitleAndWait(GameConstants.ANSI_RED+GameConstants.shipSunk+GameConstants.ANSI_RESET);
-            printTitleAndWait(GameConstants.shipSunk);
-        }
+        printFlashingMessage(GameConstants.shipSunk);
     }
 
     public void printGameOver() {
-        System.out.print(GameConstants.ANSI_CLS_HOME);
-        for (int i = 0; i < 20; i++) {
-            printTitleAndWait(GameConstants.ANSI_RED+GameConstants.gameOver+GameConstants.ANSI_RESET);
-            printTitleAndWait(GameConstants.gameOver);
-        }
+        printFlashingMessage(GameConstants.gameOver);
     }
 
     public void printInvalidInput() {
+        printFlashingMessage(GameConstants.invalidInput);
+    }
+
+    public void printYouWin() {
+        printFlashingMessage(GameConstants.youWin);
+    }
+
+    private void printFlashingMessage(String message) {
         System.out.print(GameConstants.ANSI_CLS_HOME);
         for (int i = 0; i < 20; i++) {
-            printTitleAndWait(GameConstants.ANSI_RED+GameConstants.invalidInput+GameConstants.ANSI_RESET);
-            printTitleAndWait(GameConstants.invalidInput);
+            printTitleAndWait(GameConstants.ANSI_RED+message+GameConstants.ANSI_RESET);
+            printTitleAndWait(message);
         }
     }
 }

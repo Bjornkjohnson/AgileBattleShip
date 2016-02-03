@@ -98,6 +98,13 @@ public class UITest {
         assertEquals(testInvalidInputMessage, outContent.toString());
     }
 
+    @Test
+    public void testYouWinMessage() throws Exception {
+        String testYouWinMessage = buildMessage(GameConstants.youWin);
+        newUI.printYouWin();
+        assertEquals(testYouWinMessage, outContent.toString());
+    }
+
     private String buildMessage(String message) {
         String builtString = "";
         builtString += GameConstants.ANSI_CLS_HOME;

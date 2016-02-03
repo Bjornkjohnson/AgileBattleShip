@@ -3,7 +3,6 @@ package com.bjorn;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.mockito.Mockito;
 
 import static org.mockito.Mockito.*;
 
@@ -15,10 +14,11 @@ public class GameTest {
 
     @Before
     public void setUp() {
-        mockUI = Mockito.mock(UI.class);
-        mockBoard = Mockito.mock(Board.class);
+        mockUI = mock(UI.class);
+        mockBoard = mock(Board.class);
         newSetup = new BoardSetup();
         newGame = new Game(mockUI, mockBoard, newSetup);
+        stub(mockUI.getUserInput()).toReturn("a0");
         newGame.startGame();
 
     }
@@ -34,13 +34,8 @@ public class GameTest {
     }
 
     @Test
-    public void checkIfPromptForXCoordinateIsCalled() {
-        verify(mockUI, atLeastOnce()).promptForXCoordinate();
-    }
-
-    @Test
-    public void checkIfPromptForYCoordinateIsCalled() {
-        verify(mockUI, atLeastOnce()).promptForYCoordinate();
+    public void checkIfPromptForCoordinatesIsCalled() {
+        verify(mockUI, atLeastOnce()).promptForCoordinates();
     }
 
     @Test

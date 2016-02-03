@@ -56,22 +56,15 @@ public class UITest {
 
     @Test
     public void getCoordinatesFromUser() throws Exception {
-        ByteArrayInputStream in = new ByteArrayInputStream("1".getBytes());
+        ByteArrayInputStream in = new ByteArrayInputStream("a1".getBytes());
         System.setIn(in);
-        assertEquals(1, newUI.getUserInput());
+        assertEquals("a1", newUI.getUserInput());
     }
 
     @Test
-    public void promptUserForXCoordinates() throws Exception {
-        String prompt = "Please Enter X Coordinate: ";
-        newUI.promptForXCoordinate();
-        assertEquals(prompt, outContent.toString());
-    }
-
-    @Test
-    public void promptUserForYCoordinates() throws Exception {
-        String prompt = "Please Enter Y Coordinate: ";
-        newUI.promptForYCoordinate();
+    public void promptUserForCoordinates() throws Exception {
+        String prompt = "Please Enter Coordinates: ";
+        newUI.promptForCoordinates();
         assertEquals(prompt, outContent.toString());
     }
 

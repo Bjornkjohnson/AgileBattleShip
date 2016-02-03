@@ -50,6 +50,13 @@ public class UI {
         System.out.print("_|");
     }
 
+    private void printVisibleShipCellState(Board boardState, int xCoordinate, int yCoordinate) {
+        String cellState = boardState.getCellState(xCoordinate, yCoordinate);
+        System.out.print("_");
+        System.out.print(cellState);
+        System.out.print("_|");
+    }
+
     private void printXAxisNumbers() {
         System.out.print("  ");
         String xAxisNumbers = " %-2d ";

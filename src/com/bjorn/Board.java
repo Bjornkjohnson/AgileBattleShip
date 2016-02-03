@@ -26,12 +26,21 @@ public class Board {
 
     public void placeShip(Ship newShip) {
         HashMap<Integer, String> coordinates = newShip.getCoordinates();
+        int shipWraps = 0;
         for (Integer key : coordinates.keySet()) {
-            if (boardState.containsKey(key)) {
+            if (key%10 == 9 || key%10 == 0) {
+                shipWraps++;
+            }
+            if (invalidPosition(key, shipWraps)) {
                 throw new RuntimeException();
             }
         }
         boardState.putAll(coordinates);
+    }
+
+    private boolean invalidPosition(int key, int shipWraps) {
+
+        return boardState.containsKey(key) || key > 99 || shipWraps>1;
     }
 
     private int convertCoordinateToInt(int xCoordinate, int yCoordinate) {

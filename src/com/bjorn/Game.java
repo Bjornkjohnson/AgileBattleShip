@@ -15,9 +15,9 @@ public class Game {
         this.gameUI = gameUI;
         this.opponentBoard = opponentBoard;
         fleet[0] = new Ship(2, 0, "S");
-        fleet[1] = new Ship(3, 0, "S");
+        fleet[1] = new Ship(3, 1, "S");
         fleet[2] = new Ship(3, 0, "S");
-        fleet[3] = new Ship(4, 0, "S");
+        fleet[3] = new Ship(4, 1, "S");
         fleet[4] = new Ship(5, 0, "S");
         newSetup.randomBoard(fleet,opponentBoard);
     }

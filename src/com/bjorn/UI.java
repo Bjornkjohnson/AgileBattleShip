@@ -87,4 +87,12 @@ public class UI {
             printTitleAndWait(GameConstants.gameOver);
         }
     }
+
+    public void printInvalidInput() {
+        System.out.print(GameConstants.ANSI_CLS_HOME);
+        for (int i = 0; i < 20; i++) {
+            printTitleAndWait(GameConstants.ANSI_RED+GameConstants.invalidInput+GameConstants.ANSI_RESET);
+            printTitleAndWait(GameConstants.invalidInput);
+        }
+    }
 }

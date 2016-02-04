@@ -27,13 +27,17 @@ public class UI {
             e.printStackTrace();
         }
     }
-    public void printBoard(Board boardState) {
+    public void printBoard(Board boardState, boolean showShip) {
         System.out.print(GameConstants.ANSI_CLS_HOME);
         printXAxisNumbers();
         for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
             printYAxisNumbers(yCoordinate);
             for (int xCoordinate = 0; xCoordinate < 10; xCoordinate++) {
-                printCellState(boardState, xCoordinate, yCoordinate);
+                if (showShip == false) {
+                    printCellState(boardState, xCoordinate, yCoordinate);
+                } else {
+                    printVisibleShipCellState(boardState, xCoordinate, yCoordinate);
+                }
             }
             System.out.print("\n");
         }

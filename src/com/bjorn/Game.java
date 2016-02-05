@@ -9,11 +9,13 @@ import static java.lang.Character.toLowerCase;
 public class Game {
     UI gameUI;
     Board opponentBoard;
+    Board playerBoard;
     Ship fleet[] = new Ship[5];
 
-    Game(UI gameUI, Board opponentBoard, BoardSetup newSetup) {
+    Game(UI gameUI, Board opponentBoard, Board playerBoard, BoardSetup newSetup) {
         this.gameUI = gameUI;
         this.opponentBoard = opponentBoard;
+        this.playerBoard = playerBoard;
         fleet[0] = new Ship(2, 0, "S");
         fleet[1] = new Ship(3, 1, "S");
         fleet[2] = new Ship(3, 0, "S");
@@ -31,13 +33,18 @@ public class Game {
 
     private void gameLoop () {
         for (int i = 0; i < 100; i++) {
-            gameUI.printBoard(opponentBoard);
+            printBoards();
             fireOnBoard();
             if (gameOver()){
                 break;
             }
         }
-        gameUI.printBoard(opponentBoard);
+        gameUI.printBoard(opponentBoard, false);
+    }
+
+    private void printBoards() {
+        gameUI.printBoard(playerBoard, true);
+        gameUI.printBoard(opponentBoard, false);
     }
 
     private boolean gameOver() {
@@ -68,7 +75,7 @@ public class Game {
         String coordinates = gameUI.getUserInput();
         while (!coordinates.matches("^([a-jA-J]\\p{Digit})$")) {
             gameUI.printInvalidInput();
-            gameUI.printBoard(opponentBoard);
+            printBoards();
             gameUI.promptForCoordinates();
             coordinates = gameUI.getUserInput();
         }

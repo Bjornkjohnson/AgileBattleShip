@@ -8,16 +8,18 @@ import static org.mockito.Mockito.*;
 
 public class GameTest {
     UI mockUI;
-    Board mockBoard;
+    Board mockComputerBoard;
+    Board mockPlayerBoard;
     Game newGame;
     BoardSetup newSetup;
 
     @Before
     public void setUp() {
         mockUI = mock(UI.class);
-        mockBoard = mock(Board.class);
+        mockComputerBoard = mock(Board.class);
+        mockPlayerBoard = mock(Board.class);
         newSetup = new BoardSetup();
-        newGame = new Game(mockUI, mockBoard, newSetup);
+        newGame = new Game(mockUI, mockComputerBoard, mockPlayerBoard, newSetup);
         stub(mockUI.getUserInput()).toReturn("a0");
         newGame.startGame();
 
@@ -30,7 +32,7 @@ public class GameTest {
 
     @Test
     public void checkIfPrintBoardIsCalled() {
-        verify(mockUI, atLeastOnce()).printBoard(mockBoard);
+        verify(mockUI, atLeastOnce()).printBoard(mockComputerBoard, false);
     }
 
     @Test
@@ -45,7 +47,7 @@ public class GameTest {
 
     @Test
     public void checkIfUpdateBoardStateIsCalled() {
-        verify(mockBoard, atLeastOnce()).upDateBoardState(0, 0, "M");
+        verify(mockComputerBoard, atLeastOnce()).upDateBoardState(0, 0, "M");
     }
 
 }

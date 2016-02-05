@@ -26,16 +26,22 @@ public class UITest {
     }
 
     @Test
-    public void testPrintEmptyGameBoard() throws Exception {
-        newUI.printBoard(newBoard);
-        assertEquals(GameConstants.emptyBoard, outContent.toString());
+    public void testPrintEmptyComputerGameBoard() throws Exception {
+        newUI.printBoard(newBoard, false);
+        assertEquals(GameConstants.emptyComputerBoard, outContent.toString());
+    }
+
+    @Test
+    public void testPrintEmptyUserGameBoard() throws Exception {
+        newUI.printBoard(newBoard, true);
+        assertEquals(GameConstants.emptyUserBoard, outContent.toString());
     }
 
     @Test
     public void testPrintOneMissGameBoard() throws Exception {
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(0, 0, "M");
-        newUI.printBoard(oneMissBoard);
+        newUI.printBoard(oneMissBoard, false);
         assertEquals(GameConstants.singleMissBoard, outContent.toString());
     }
 
@@ -43,7 +49,7 @@ public class UITest {
     public void testMissInMiddleOfBoard() throws Exception {
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(5, 4, "M");
-        newUI.printBoard(oneMissBoard);
+        newUI.printBoard(oneMissBoard, false);
         assertEquals(GameConstants.middleMissBoard, outContent.toString());
     }
 
@@ -73,7 +79,7 @@ public class UITest {
         Board oneShip = new Board();
         Ship newShip = new Ship(2, 0, "S");
         oneShip.placeShip(newShip);
-        newUI.printBoard(oneShip);
+        newUI.printBoard(oneShip, false);
         assertEquals(GameConstants.printedBoard, outContent.toString());
     }
 
@@ -115,6 +121,14 @@ public class UITest {
             builtString += GameConstants.ANSI_CLS_HOME;
         }
         return builtString;
+    }
+
+    @Test
+    public void testPrintBoardShowingShips() throws Exception {
+        Ship newShip = new Ship(2, 0, "S");
+        newBoard.placeShip(newShip);
+        newUI.printBoard(newBoard, true);
+        assertEquals(GameConstants.showShipBoard, outContent.toString());
     }
 
 }

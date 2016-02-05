@@ -69,4 +69,5 @@ public class BoardTest {
         newShip1.updatePosition(8);
         newBoard.placeShip(newShip1);
     }
+
 }

@@ -26,9 +26,15 @@ public class UITest {
     }
 
     @Test
-    public void testPrintEmptyGameBoard() throws Exception {
+    public void testPrintEmptyComputerGameBoard() throws Exception {
         newUI.printBoard(newBoard, false);
-        assertEquals(GameConstants.emptyBoard, outContent.toString());
+        assertEquals(GameConstants.emptyComputerBoard, outContent.toString());
+    }
+
+    @Test
+    public void testPrintEmptyUserGameBoard() throws Exception {
+        newUI.printBoard(newBoard, true);
+        assertEquals(GameConstants.emptyUserBoard, outContent.toString());
     }
 
     @Test

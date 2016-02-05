@@ -33,12 +33,17 @@ public class Game {
 
     private void gameLoop () {
         for (int i = 0; i < 100; i++) {
-            gameUI.printBoard(opponentBoard, false);
+            printBoards();
             fireOnBoard();
             if (gameOver()){
                 break;
             }
         }
+        gameUI.printBoard(opponentBoard, false);
+    }
+
+    private void printBoards() {
+        gameUI.printBoard(playerBoard, true);
         gameUI.printBoard(opponentBoard, false);
     }
 
@@ -70,7 +75,7 @@ public class Game {
         String coordinates = gameUI.getUserInput();
         while (!coordinates.matches("^([a-jA-J]\\p{Digit})$")) {
             gameUI.printInvalidInput();
-            gameUI.printBoard(opponentBoard, false);
+            printBoards();
             gameUI.promptForCoordinates();
             coordinates = gameUI.getUserInput();
         }

@@ -28,7 +28,12 @@ public class UI {
         }
     }
     public void printBoard(Board boardState, boolean showShip) {
-        System.out.print(GameConstants.ANSI_CLS_HOME);
+        if (showShip == true) {
+            System.out.print(GameConstants.ANSI_CLS_HOME);
+            System.out.println("\tYour Board");
+        } else {
+            System.out.println("\tOpponent Board");
+        }
         printXAxisNumbers();
         for (int yCoordinate = 0; yCoordinate < 10; yCoordinate++) {
             printYAxisNumbers(yCoordinate);

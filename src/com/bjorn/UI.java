@@ -122,4 +122,13 @@ public class UI {
             printTitleAndWait(message);
         }
     }
+
+    public void printComputerThinking() {
+        System.out.print("Computer Thinking...");
+        try {
+            TimeUnit.MILLISECONDS.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }

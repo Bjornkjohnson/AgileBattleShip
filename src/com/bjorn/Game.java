@@ -82,6 +82,7 @@ public class Game {
     }
 
     private void computerFireOnBoard() {
+        gameUI.printComputerThinking();
         checkFleetForHit(getRandomNumber(), getRandomNumber(), playerFleet, playerBoard);
     }
 

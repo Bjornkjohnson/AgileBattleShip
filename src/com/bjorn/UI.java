@@ -51,12 +51,23 @@ public class UI {
     private void printCellState(Board boardState, int xCoordinate, int yCoordinate) {
         String cellState = boardState.getCellState(xCoordinate, yCoordinate);
         System.out.print("_");
-        if (cellState != "S"){
+        if (shouldHide(cellState)){
             System.out.print(cellState);
         } else {
             System.out.print("~");
         }
         System.out.print("_|");
+    }
+
+    private boolean shouldHide(String character) {
+        if (character == "A" ||
+            character == "B" ||
+            character == "S" ||
+            character == "C" ||
+            character == "D") {
+            return false;
+        }
+        return true;
     }
 
     private void printVisibleShipCellState(Board boardState, int xCoordinate, int yCoordinate) {

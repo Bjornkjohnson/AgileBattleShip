@@ -35,4 +35,19 @@ public class BoardSetupTest {
         boardState = randomBoard.getBoardState();
         assertEquals(2, boardState.size());
     }
+
+    @Test
+    public void testPlacingTwoUserShips() throws Exception {
+        newFleet = new Ship[5];
+        newFleet[0] = new Ship(2,0,"S");
+        newFleet[1] = new Ship(3,0,"S");
+        newFleet[2] = new Ship(3,0,"S");
+        newFleet[3] = new Ship(4,0,"S");
+        newFleet[4] = new Ship(5,0,"S");
+        HashMap<Integer, String> boardState;
+        Board userBoard = newPlacement.userSetup(newFleet, testBoard);
+        boardState = userBoard.getBoardState();
+        assertEquals(17, boardState.size());
+    }
+
 }

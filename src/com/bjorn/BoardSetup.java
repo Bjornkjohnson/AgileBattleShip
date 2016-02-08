@@ -7,14 +7,18 @@ public class BoardSetup {
         for (int i = 0; i < fleet.length; i++) {
             while (true) {
                 try {
-                    fleet[i].updatePosition(getRandomNumber());
-                    newBoard.placeShip(fleet[i]);
+                    placeShip(fleet[i], newBoard, getRandomNumber());
                     break;
                 } catch (RuntimeException e) {
                 }
             }
         }
         return newBoard;
+    }
+
+    private void placeShip(Ship ship, Board board, int position) {
+        ship.updatePosition(position);
+        board.placeShip(ship);
     }
 
     private int getRandomNumber() {
@@ -24,4 +28,16 @@ public class BoardSetup {
         return r.nextInt(High-Low) + Low;
     }
 
+    public Board userSetup(Ship fleet[], Board newBoard) {
+        for (int i = 0; i < fleet.length; i++) {
+            while (true) {
+                try {
+                    placeShip(fleet[i], newBoard, i*10);
+                    break;
+                } catch (RuntimeException e) {
+                }
+            }
+        }
+        return newBoard;
+    }
 }

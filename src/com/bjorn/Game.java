@@ -1,8 +1,5 @@
 package com.bjorn;
 
-import jdk.nashorn.internal.ir.WhileNode;
-import jdk.nashorn.internal.runtime.regexp.joni.encoding.CharacterType;
-
 import static java.lang.Character.getNumericValue;
 import static java.lang.Character.toLowerCase;
 
@@ -10,18 +7,25 @@ public class Game {
     UI gameUI;
     Board opponentBoard;
     Board playerBoard;
-    Ship fleet[] = new Ship[5];
+    Ship computerFleet[] = new Ship[5];
+    Ship playerFleet[] = new Ship[5];
 
     Game(UI gameUI, Board opponentBoard, Board playerBoard, BoardSetup newSetup) {
         this.gameUI = gameUI;
         this.opponentBoard = opponentBoard;
         this.playerBoard = playerBoard;
+        buildFleet(computerFleet);
+        newSetup.randomBoard(computerFleet,opponentBoard);
+        buildFleet(playerFleet);
+        newSetup.randomBoard(playerFleet,playerBoard);
+    }
+
+    private void buildFleet(Ship fleet[]) {
         fleet[0] = new Ship(2, 0, "S");
         fleet[1] = new Ship(3, 1, "S");
         fleet[2] = new Ship(3, 0, "S");
         fleet[3] = new Ship(4, 1, "S");
         fleet[4] = new Ship(5, 0, "S");
-        newSetup.randomBoard(fleet,opponentBoard);
     }
 
     public void startGame() {
@@ -48,8 +52,8 @@ public class Game {
     }
 
     private boolean gameOver() {
-        for (int i = 0; i < fleet.length; i++) {
-            if (!fleet[i].isSunk()) {
+        for (int i = 0; i < computerFleet.length; i++) {
+            if (!computerFleet[i].isSunk()) {
                 return false;
             }
         }
@@ -83,11 +87,11 @@ public class Game {
     }
 
     private void checkFleetForHit (int x, int y) {
-        for (int i = 0; i < fleet.length; i++) {
-            if (fleet[i].checkHit(x + y*10)) {
+        for (int i = 0; i < computerFleet.length; i++) {
+            if (computerFleet[i].checkHit(x + y*10)) {
                 opponentBoard.upDateBoardState(x,y, "H");
-                if (fleet[i].isSunk()) {
-                    fleet[i].updateSunkSymbol(opponentBoard);
+                if (computerFleet[i].isSunk()) {
+                    computerFleet[i].updateSunkSymbol(opponentBoard);
                     gameUI.printSunk();
                 }
                 break;

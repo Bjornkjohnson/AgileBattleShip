@@ -1,5 +1,7 @@
 package com.bjorn;
 
+import java.util.Random;
+
 import static java.lang.Character.getNumericValue;
 import static java.lang.Character.toLowerCase;
 
@@ -38,7 +40,12 @@ public class Game {
     private void gameLoop () {
         for (int i = 0; i < 100; i++) {
             printBoards();
-            fireOnBoard();
+            playerFireOnBoard();
+            if (gameOver()){
+                break;
+            }
+            printBoards();
+            computerFireOnBoard();
             if (gameOver()){
                 break;
             }
@@ -61,11 +68,11 @@ public class Game {
     }
 
 
-    private void fireOnBoard() {
+    private void playerFireOnBoard() {
         String coordinates = getValidatedInput();
         int y = changeCharToInt(coordinates.charAt(0));
         int x = getNumericValue(coordinates.charAt(1));
-        checkFleetForHit(x,y);
+        checkFleetForHit(x,y, computerFleet, opponentBoard);
     }
 
     private int changeCharToInt(char letter) {
@@ -74,6 +81,17 @@ public class Game {
         return number;
     }
 
+    private void computerFireOnBoard() {
+        gameUI.printComputerThinking();
+        checkFleetForHit(getRandomNumber(), getRandomNumber(), playerFleet, playerBoard);
+    }
+
+    private int getRandomNumber() {
+        Random r = new Random();
+        int Low = 0;
+        int High = 9;
+        return r.nextInt(High-Low) + Low;
+    }
     private String getValidatedInput() {
         gameUI.promptForCoordinates();
         String coordinates = gameUI.getUserInput();
@@ -86,17 +104,17 @@ public class Game {
         return coordinates;
     }
 
-    private void checkFleetForHit (int x, int y) {
-        for (int i = 0; i < computerFleet.length; i++) {
-            if (computerFleet[i].checkHit(x + y*10)) {
-                opponentBoard.upDateBoardState(x,y, "H");
-                if (computerFleet[i].isSunk()) {
-                    computerFleet[i].updateSunkSymbol(opponentBoard);
+    private void checkFleetForHit (int x, int y, Ship fleet[], Board board) {
+        for (int i = 0; i < fleet.length; i++) {
+            if (fleet[i].checkHit(x + y*10)) {
+                board.upDateBoardState(x,y, "H");
+                if (fleet[i].isSunk()) {
+                    fleet[i].updateSunkSymbol(board);
                     gameUI.printSunk();
                 }
                 break;
             } else {
-                opponentBoard.upDateBoardState(x,y, "M");
+                board.upDateBoardState(x,y, "M");
             }
         }
     }

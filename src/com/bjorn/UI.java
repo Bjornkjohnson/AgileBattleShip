@@ -52,9 +52,9 @@ public class UI {
         String cellState = boardState.getCellState(xCoordinate, yCoordinate);
         System.out.print("_");
         if (shouldHide(cellState)){
-            System.out.print(cellState);
-        } else {
             System.out.print("~");
+        } else {
+            System.out.print(cellState);
         }
         System.out.print("_|");
     }
@@ -65,9 +65,9 @@ public class UI {
             character == "S" ||
             character == "C" ||
             character == "D") {
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 
     private void printVisibleShipCellState(Board boardState, int xCoordinate, int yCoordinate) {
@@ -120,6 +120,15 @@ public class UI {
         for (int i = 0; i < 20; i++) {
             printTitleAndWait(GameConstants.ANSI_RED+message+GameConstants.ANSI_RESET);
             printTitleAndWait(message);
+        }
+    }
+
+    public void printComputerThinking() {
+        System.out.print("Computer Thinking...");
+        try {
+            TimeUnit.MILLISECONDS.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
     }
 }

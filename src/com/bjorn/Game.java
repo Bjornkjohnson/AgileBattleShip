@@ -23,11 +23,11 @@ public class Game {
     }
 
     private void buildFleet(Ship fleet[]) {
-        fleet[0] = new Ship(2, 0, "D");
-        fleet[1] = new Ship(3, 1, "C");
-        fleet[2] = new Ship(3, 0, "S");
-        fleet[3] = new Ship(4, 1, "B");
-        fleet[4] = new Ship(5, 0, "A");
+        fleet[0] = new Ship(2, 0, GameConstants.destroyer);
+        fleet[1] = new Ship(3, 1, GameConstants.cruiser);
+        fleet[2] = new Ship(3, 0, GameConstants.submarine);
+        fleet[3] = new Ship(4, 1, GameConstants.battleship);
+        fleet[4] = new Ship(5, 0, GameConstants.aircraftCarrier);
     }
 
     public void startGame() {

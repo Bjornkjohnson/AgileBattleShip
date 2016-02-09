@@ -77,7 +77,7 @@ public class UITest {
     @Test
     public void shouldNotPrintShipOnOppenentBoard() throws Exception {
         Board oneShip = new Board();
-        Ship newShip = new Ship(2, 0, "S");
+        Ship newShip = new Ship(2, 0, GameConstants.submarine);
         oneShip.placeShip(newShip);
         newUI.printBoard(oneShip, false);
         assertEquals(GameConstants.printedBoard, outContent.toString());

@@ -3,6 +3,7 @@ package com.bjorn;
 public class GameConstants {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_CLS_HOME = "\033[2J\u001B[H";
     public static final String title = "" +
             "██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗ \n" +
@@ -123,4 +124,10 @@ public class GameConstants {
             "  ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║╚═╝\n" +
             "   ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║██╗\n" +
             "   ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝╚═╝\n";
+    public static final String destroyer = ANSI_RED + "D" + ANSI_RESET;
+    public static final String cruiser = ANSI_RED + "C" + ANSI_RESET;
+    public static final String submarine = ANSI_RED + "S" + ANSI_RESET;
+    public static final String battleship = ANSI_RED + "B" + ANSI_RESET;
+    public static final String aircraftCarrier = ANSI_RED + "A" + ANSI_RESET;
+    public static final String blueWater = ANSI_BLUE + "~" + ANSI_RESET;
 }

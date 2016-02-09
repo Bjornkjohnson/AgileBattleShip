@@ -51,20 +51,20 @@ public class UI {
     private void printCellState(Board boardState, int xCoordinate, int yCoordinate) {
         String cellState = boardState.getCellState(xCoordinate, yCoordinate);
         System.out.print("_");
-        if (shouldHide(cellState)){
-            System.out.print("~");
+        if (shouldHide(cellState) || cellState == "~"){
+            System.out.print(GameConstants.blueWater);
         } else {
             System.out.print(cellState);
         }
         System.out.print("_|");
     }
 
-    private boolean shouldHide(String character) {
-        if (character == "A" ||
-            character == "B" ||
-            character == "S" ||
-            character == "C" ||
-            character == "D") {
+    private boolean shouldHide(String symbol) {
+        if (symbol == GameConstants.aircraftCarrier ||
+            symbol == GameConstants.battleship ||
+            symbol == GameConstants.submarine ||
+            symbol == GameConstants.cruiser ||
+            symbol == GameConstants.destroyer) {
             return true;
         }
         return false;
@@ -73,7 +73,11 @@ public class UI {
     private void printVisibleShipCellState(Board boardState, int xCoordinate, int yCoordinate) {
         String cellState = boardState.getCellState(xCoordinate, yCoordinate);
         System.out.print("_");
-        System.out.print(cellState);
+        if (cellState == "~") {
+            System.out.print(GameConstants.blueWater);
+        } else  {
+            System.out.print(cellState);
+        }
         System.out.print("_|");
     }
 

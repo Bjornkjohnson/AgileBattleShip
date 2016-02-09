@@ -6,6 +6,9 @@ import org.junit.Test;
 
 import java.io.*;
 
+import static org.hamcrest.CoreMatchers.containsString;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertEquals;
 
 public class UITest {
@@ -42,7 +45,7 @@ public class UITest {
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(0, 0, "M");
         newUI.printBoard(oneMissBoard, false);
-        assertEquals(GameConstants.singleMissBoard, outContent.toString());
+        assertThat(outContent.toString(), containsString("a|_M_|"));
     }
 
     @Test
@@ -50,7 +53,7 @@ public class UITest {
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(5, 4, "M");
         newUI.printBoard(oneMissBoard, false);
-        assertEquals(GameConstants.middleMissBoard, outContent.toString());
+        assertThat(outContent.toString(), containsString(GameConstants.middleMissBoard));
     }
 
     @Test
@@ -80,7 +83,7 @@ public class UITest {
         Ship newShip = new Ship(2, 0, GameConstants.submarine);
         oneShip.placeShip(newShip);
         newUI.printBoard(oneShip, false);
-        assertEquals(GameConstants.printedBoard, outContent.toString());
+        assertThat(outContent.toString(), not(containsString(GameConstants.submarine)));
     }
 
     @Test
@@ -128,7 +131,7 @@ public class UITest {
         Ship newShip = new Ship(2, 0, "S");
         newBoard.placeShip(newShip);
         newUI.printBoard(newBoard, true);
-        assertEquals(GameConstants.showShipBoard, outContent.toString());
+        assertThat(outContent.toString(), containsString("a|_S_|_S_|_"));
     }
 
 }

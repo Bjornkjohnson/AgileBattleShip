@@ -1,9 +1,24 @@
 package com.bjorn;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class UI {
+    private HashMap<String, String> symbols = new HashMap<>();
+
+    UI() {
+        symbols.put("~", GameConstants.blueWater);
+        symbols.put("H", GameConstants.hit);
+        symbols.put("M", GameConstants.miss);
+        symbols.put("X", GameConstants.sunk);
+        symbols.put("D", GameConstants.destroyer);
+        symbols.put("A", GameConstants.aircraftCarrier);
+        symbols.put("B", GameConstants.battleship);
+        symbols.put("S", GameConstants.submarine);
+        symbols.put("C", GameConstants.cruiser);
+
+    }
 
     public String getUserInput() {
         Scanner input = new Scanner(System.in);
@@ -54,17 +69,17 @@ public class UI {
         if (shouldHide(cellState) || cellState == "~"){
             System.out.print(GameConstants.blueWater);
         } else {
-            System.out.print(cellState);
+            System.out.print(symbols.get(cellState));
         }
         System.out.print("_|");
     }
 
     private boolean shouldHide(String symbol) {
-        if (symbol == GameConstants.aircraftCarrier ||
-            symbol == GameConstants.battleship ||
-            symbol == GameConstants.submarine ||
-            symbol == GameConstants.cruiser ||
-            symbol == GameConstants.destroyer) {
+        if (symbol == "A" ||
+            symbol == "B" ||
+            symbol == "S" ||
+            symbol == "C" ||
+            symbol == "D") {
             return true;
         }
         return false;
@@ -73,11 +88,7 @@ public class UI {
     private void printVisibleShipCellState(Board boardState, int xCoordinate, int yCoordinate) {
         String cellState = boardState.getCellState(xCoordinate, yCoordinate);
         System.out.print("_");
-        if (cellState == "~") {
-            System.out.print(GameConstants.blueWater);
-        } else  {
-            System.out.print(cellState);
-        }
+        System.out.print(symbols.get(cellState));
         System.out.print("_|");
     }
 

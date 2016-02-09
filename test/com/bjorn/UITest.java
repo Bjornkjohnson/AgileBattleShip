@@ -45,7 +45,7 @@ public class UITest {
         Board oneMissBoard = new Board();
         oneMissBoard.upDateBoardState(0, 0, "M");
         newUI.printBoard(oneMissBoard, false);
-        assertThat(outContent.toString(), containsString("a|_M_|"));
+        assertThat(outContent.toString(), containsString("a|_"+GameConstants.miss +"_|"));
     }
 
     @Test
@@ -131,7 +131,7 @@ public class UITest {
         Ship newShip = new Ship(2, 0, "S");
         newBoard.placeShip(newShip);
         newUI.printBoard(newBoard, true);
-        assertThat(outContent.toString(), containsString("a|_S_|_S_|_"));
+        assertThat(outContent.toString(), containsString("a|_"+GameConstants.submarine+"_|_"+GameConstants.submarine+"_|_"));
     }
 
 }

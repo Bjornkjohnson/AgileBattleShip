@@ -3,6 +3,8 @@ package com.bjorn;
 public class GameConstants {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_WHITE = "\u001B[37m";
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_CLS_HOME = "\033[2J\u001B[H";
     public static final String destroyer = ANSI_RED + "D" + ANSI_RESET;
@@ -11,6 +13,9 @@ public class GameConstants {
     public static final String battleship = ANSI_RED + "B" + ANSI_RESET;
     public static final String aircraftCarrier = ANSI_RED + "A" + ANSI_RESET;
     public static final String blueWater = ANSI_BLUE + "~" + ANSI_RESET;
+    public static final String hit = ANSI_YELLOW + "H" + ANSI_RESET;
+    public static final String miss = ANSI_WHITE + "M" + ANSI_RESET;
+    public static final String sunk = ANSI_RED + "X" + ANSI_RESET;
     public static final String title = "" +
             "██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗ \n" +
             "██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗\n" +
@@ -52,7 +57,7 @@ public class GameConstants {
     }
 
     public static final String middleMissBoard = "e|_"+blueWater+"_|_"+blueWater+"_|_"+blueWater+
-                                                    "_|_"+blueWater+"_|_"+blueWater+"_|_M_|";
+                                                    "_|_"+blueWater+"_|_"+blueWater+"_|_"+miss+"_|";
 
 
     public static final String shipSunk = "" +

@@ -22,7 +22,7 @@ public class UI {
 
     public String getUserInput() {
         Scanner input = new Scanner(System.in);
-        return input.nextLine();
+        return input.nextLine().trim();
     }
 
     public void printWelcome(){

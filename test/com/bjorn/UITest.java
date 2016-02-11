@@ -134,4 +134,11 @@ public class UITest {
         assertThat(outContent.toString(), containsString("a|_"+GameConstants.submarine+"_|_"+GameConstants.submarine+"_|_"));
     }
 
+    @Test
+    public void testReturnFormattedInput() throws Exception {
+        ByteArrayInputStream in = new ByteArrayInputStream("  a1  ".getBytes());
+        System.setIn(in);
+        assertEquals("a1", newUI.getUserInput());
+    }
+
 }

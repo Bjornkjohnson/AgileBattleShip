@@ -75,11 +75,7 @@ public class UI {
     }
 
     private boolean shouldHide(String symbol) {
-        if (symbol == "A" ||
-            symbol == "B" ||
-            symbol == "S" ||
-            symbol == "C" ||
-            symbol == "D") {
+        if (symbol.matches("^(A|B|C|D|S)")) {
             return true;
         }
         return false;
@@ -139,7 +135,7 @@ public class UI {
     }
 
     public void printComputerThinking() {
-        System.out.print("Computer Thinking...");
+        System.out.print(GameConstants.ANSI_RED+"Computer Thinking..."+GameConstants.ANSI_RESET);
         try {
             TimeUnit.MILLISECONDS.sleep(1000);
         } catch (InterruptedException e) {
